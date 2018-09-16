@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>postMessage</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        //高级api 不兼容 socket.io（一般使用它）
+        let socket = new WebSocket('ws://localhost:3000')
+        socket.onopen = function () {
+            socket.send('父级数据')
+        }
+        socket.onmessage = function (e) {
+            debugger
+            console.log(e.data)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iframe</title>
+</head>
+
+<body>
+    a页面
+    <!--要用域名 域名 -->
+    <!-- hosts下新建：m.zbc.com和 n.zbc.com -->
+    <iframe src="http://m.zbc.com:3000/b/b.html" frameborder="0" id="frame" onload="load()"></iframe>
+    <script>
+        document.domain = "zbc.com"
+        // let frame = document.querySelector("#frame")
+        function load() {
+            alert(frame.contentWindow.a)
+        }
+
+    </script>
+</body>
+
+</html>

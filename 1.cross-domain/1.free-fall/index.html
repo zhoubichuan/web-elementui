@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.降级浏览器实现跨域</title>
+</head>
+
+<body>
+    <h1>1.降级浏览器实现跨域</h1>
+    <p>谷歌浏览器中加入:--user-data-dir=C:\MyChromeDevUserData c中建立文件夹</p>
+    <script>
+        window.onload = function () {
+            var url = 'http://localhost:3000/'
+            var xhr = createxmlHttpRequest()
+            xhr.responseType = "json"
+            xhr.open("post", url, "true")
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8;")
+            xhr.send('name=zbc&age=26')
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        var data = xhr.response
+                        console.log(data)
+                    }
+                }
+            }
+        }
+        function createxmlHttpRequest() {
+            if (window.ActiveXObject) {
+                return new ActiveXObject("Microsoft.XMLHTTP")
+            } else if (window.XMLHttpRequest) {
+                return new XMLHttpRequest()
+            }
+        }
+    </script>
+</body>
+
+</html>
