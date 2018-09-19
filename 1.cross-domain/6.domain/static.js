@@ -1,3 +1,4 @@
+//一个静态服务器，启动静态资源文件
 const http = require("http");
 const fs = require("fs");
 const app = http.createServer();

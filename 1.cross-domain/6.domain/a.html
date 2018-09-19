@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iframe</title>
+    <title>domain</title>
 </head>
 
 <body>
@@ -14,6 +14,7 @@
     <!-- hosts下新建：m.zbc.com和 n.zbc.com -->
     <iframe src="http://m.zbc.com:3000/b/b.html" frameborder="0" id="frame" onload="load()"></iframe>
     <script>
+        debugger
         document.domain = "zbc.com"
         // let frame = document.querySelector("#frame")
         function load() {
