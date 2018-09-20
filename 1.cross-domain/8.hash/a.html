@@ -10,13 +10,12 @@
 
 <body style="border:1px solid black">
     a页面
-    <iframe src='http://localhost:4000/c.html#send-to-c-page' id="frame" frameborder=" 0" style="border:1px solid red
+    <iframe src='http://localhost:4000/c.html' id="frame" frameborder=" 0" style="border:1px solid red
     "></iframe>
     <script>
         window.onhashchange = function () {
             console.log("接受自c页面", location.hash)
         }
-
     </script>
 </body>
 
