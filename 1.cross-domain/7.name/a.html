@@ -5,23 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>a页面</title>
 </head>
 
-<body>
-    <h1></h1>
-    <iframe src="http://localhost:4000/c.html" id="frame" frameborder=" 0" onload="load()"></iframe>
+<body style="border:1px solid black">
+    a页面
+    <iframe src="http://localhost:4000/c.html" id="frame" frameborder=" 0" onload="load()" style="border:1px solid red"></iframe>
     <script>
-        let first = true
+        let onoff = true
         function load() {
             let iframe = document.getElementById("frame")
-            debugger
-            if (first) {
+            if (onoff) {
                 iframe.src = "http://localhost:3000/b.html"
-                first = false
+                onoff = false
             } else {
-                debugger
-                console.log(iframe.contentWindow.name)
+                alert(iframe.contentWindow.name)
             }
         }
     </script>

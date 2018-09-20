@@ -13,7 +13,6 @@ app.on("request", (req, res) => {
       console.log("a", data.toString());
       res.write(data.toString());
     }
-    // res.end();
   });
 });
 

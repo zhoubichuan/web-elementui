@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>a.html</title>
 </head>
 
-<body>
-    <h1></h1>
-    <iframe src="http://localhost:4000/c.html#父值" id="frame" frameborder=" 0">asdfasdf</iframe>
+<body style="border:1px solid black">
+    a页面
+    <iframe src='http://localhost:4000/c.html#send-to-c-page' id="frame" frameborder=" 0" style="border:1px solid red
+    "></iframe>
     <script>
         window.onhashchange = function () {
-            console.log(location.hash)
+            console.log("接受自c页面", location.hash)
         }
+
     </script>
 </body>
 

@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>c.html</title>
 </head>
 
-<body>
+<body style="border:1px solid green">
+    c页面
     <script>
-        console.log(location.hash)
+        console.log("接受自a页面", location.hash)
         let iframe = document.createElement("iframe")
-        iframe.src = "http://localhost:3000/b.html#子值"
+        iframe.src = "http://localhost:3000/b.html#send-to-a-page"
         document.body.appendChild(iframe)
 
     </script>

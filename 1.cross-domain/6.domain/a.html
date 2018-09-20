@@ -8,17 +8,13 @@
     <title>domain</title>
 </head>
 
-<body>
+<body style="border:1px solid black">
     a页面
-    <!--要用域名 域名 -->
-    <!-- hosts下新建：m.zbc.com和 n.zbc.com -->
-    <iframe src="http://m.zbc.com:3000/b/b.html" frameborder="0" id="frame" onload="load()"></iframe>
+    <iframe src="http://m.zbc.com:3000/b.html" frameborder="0" id="frame"></iframe>
     <script>
-        debugger
         document.domain = "zbc.com"
-        // let frame = document.querySelector("#frame")
-        function load() {
-            alert(frame.contentWindow.a)
+        window.onload = function () {
+            alert(frame.contentWindow.b)
         }
 
     </script>
