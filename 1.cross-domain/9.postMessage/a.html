@@ -8,7 +8,7 @@
 
 <body>
     <h1>postMessage</h1>
-    <iframe style="display:none;" id="frame" src="http://127.0.0.1:4000/b/b.html"></iframe>
+    <iframe style="display:none;" id="frame" src="http://127.0.0.1:4000/b.html"></iframe>
     <script type="text/javascript">
         window.onload = function () {
             let frame = document.getElementById("frame")
@@ -16,7 +16,7 @@
             frame.contentWindow.postMessage("传递给子页面的数据：a", "http://127.0.0.1:4000/")
             window.onmessage = function (e) {
                 //判断消息来源
-                if (e.origin == 'http://127.0.0.1:4000/') {
+                if (e.origin == 'http://127.0.0.1:4000') {
                     //得到子页面的信息
                     console.log(e.data)
                 }

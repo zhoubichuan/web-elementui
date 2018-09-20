@@ -37,5 +37,8 @@
   a:得到 c 中的 b 传过来的值
 
 * 9.postMessage
+  相当于代理服务器
+  a:frame.contentWindow.postMessage 传数据；window.onmessage 接数据
+  b:window.onmessage 接数据；e.source.postMessage 传数据
 
 - 10.websocket
