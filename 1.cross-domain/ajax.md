@@ -11,6 +11,8 @@
   服务器之间不跨越，代理服务器
 
 * 4.http-proxy
+  服务器 3000 端口：http://localhost:3000 数据 ok
+  http-proxy 代理 4000 端口：http://localhost:4000 数据 ok
 
 * 5.jsonp
   利用 script 允许跨域的特征
