@@ -16,6 +16,6 @@ app.on("request", (req, res) => {
   });
 });
 
-app.listen("3100", () => {
-  console.log("连接到3100端口");
+app.listen("3000", () => {
+  console.log("连接到3000端口");
 });

@@ -42,3 +42,5 @@
   b:window.onmessage 接数据；e.source.postMessage 传数据
 
 - 10.websocket
+  a：a 页面http://localhost:4000/a.html
+  websocket 服务器 3000 端口两者之间可以通信

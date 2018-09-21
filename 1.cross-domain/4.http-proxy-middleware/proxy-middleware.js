@@ -9,5 +9,5 @@ const proxy = proxyMiddleWare("/", {
 app.use("/*", proxy);
 
 app.listen(4000, () => {
-  console.log("监听3000端口");
+  console.log("监听4000端口");
 });
