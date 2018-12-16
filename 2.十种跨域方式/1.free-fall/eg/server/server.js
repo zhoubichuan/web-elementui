@@ -7,129 +7,108 @@ const server = http.createServer();
 server.listen(port, function() {
   console.log(`已经连接${port}端口`);
 });
-let result = {
-  code: 200
-};
-let query = (res, req, url, method, result, callback) => {
-  if (req.method === method) {
-    if (req.url.includes("favicon.ico")) {
-      return false;
-    }
-    console.log("请求路径" + req.url);
-    console.log("请求的方式：" + req.method);
-    console.log("请求的路径：" + req.url);
-    callback && callback();
-    res.writeHead(200, {
-      "Content-Type": "text/html;charset=utf-8"
-    });
-    res.write(JSON.stringify(result));
-    res.end();
+
+let query = (res, req, url, result) => {
+  if (req.url.includes("favicon.ico")) {
+    return false;
   }
+  console.log("请求路径" + req.url);
+  console.log("请求的方式：" + req.method);
+  console.log("请求的路径：" + url);
+  res.writeHead(200, {
+    "Content-Type": "text/html;charset=utf-8"
+  });
+  console.log(result);
+  res.write(JSON.stringify(result));
+  res.end();
 };
+
 let common = {
   //查询全部
-  queryAll: (res, req, result, callback) => {
+  queryAll: (res, req, url) => {
     sql_query(r => {
+      let result = { code: 200 };
       result.data = r;
-      console.log(result);
-      query(res, req, "queryAll", "GET", result, callback);
+      query(res, req, url, result);
     });
   },
   //查询单个
-  querySingle: (res, req, result, callback) => {
+  querySingle: (res, req, url) => {
     let data = "";
     req.on("data", chunk => {
       data += chunk;
     });
     req.on("end", () => {
       sql_query(r => {
+        let result = { code: 200 };
         result.data = r;
-        query(res, req, "querySingle", "POST", result, callback);
+        query(res, req, url, result);
       });
     });
   },
   //添加单个
-  addSingle: (res, req, result, callback) => {
+  addSingle: (res, req, url) => {
     let data = "";
     req.on("data", chunk => {
       data += chunk;
     });
+    // data = querystring.parse(result.data.toString());
     req.on("end", () => {
-      sql_add(r => {
-        query(res, req, "addSingle", "POST", result, callback);
+      data = querystring.parse(data.toString());
+      console.log("请求数据：", data);
+      sql_add(data.s_name, data.s_english, data.s_math, r => {
+        sql_query(r => {
+          let result = { code: 200 };
+          result.data = r;
+          query(res, req, url, result);
+        });
       });
     });
   },
   //删除单个
-  deleteSingle: (res, req, result, callback) => {
+  deleteSingle: (res, req, url) => {
     let data = "";
     req.on("data", chunk => {
       data += chunk;
     });
     req.on("end", () => {
-      sql_delete(r => {
-        query(res, req, "deleteSingle", "POST", result, callback);
+      data = querystring.parse(data.toString());
+      console.log("请求数据：", data);
+      sql_delete(data.id, r => {
+        sql_query(r => {
+          let result = { code: 200 };
+          result.data = r;
+          query(res, req, url, result);
+        });
       });
     });
   },
   //更新
-  update: (res, req, result, callback) => {
+  update: (res, req, url) => {
     let data = "";
     req.on("data", chunk => {
       data += chunk;
     });
     req.on("end", () => {
-      sql_update(r => {
-        query(res, req, "update", "POST", result, callback);
+      data = querystring.parse(data.toString());
+      console.log("请求数据：", data);
+      sql_update(data.id, data.s_name, data.s_english, data.s_math, r => {
+        console.log("----------------------", r);
+        sql_query(r => {
+          let result = { code: 200 };
+          result.data = r;
+          query(res, req, url, result);
+        });
       });
     });
   }
 };
 server.on("request", function(req, res) {
   // let url = /\/(\w)+\?/g.exec(req.url)[0].slice(1, -1);
-  switch (req.method) {
-    case "GET":
-      common.queryAll(res, req, result, () => {
-        sql_query(r => {
-          result.data = r;
-        });
-      });
-      break;
-    case "POST":
-      common.querySingle(res, req, result, () => {
-        data = querystring.parse(result.data.toString());
-        if (data.math) {
-          data.sort = +result.data[result.data.length - 1].sort + 1;
-          result.data.push(data);
-        } else {
-          console.log(JSON.parse(JSON.stringify(result)));
-          result = JSON.parse(JSON.stringify(result));
-          result.data = result.data.filter(val => {
-            return data.name === val.name;
-          });
-        }
-      });
-      break;
-    case "PUT":
-      common.update(res, req, result, () => {
-        data = querystring.parse(data.toString());
-        result.data = result.data.map(val => {
-          if (data.name == val.name) {
-            data.sort = +result.data[result.data.length - 1].sort + 1;
-            return data;
-          } else {
-            return val;
-          }
-        });
-      });
-      break;
-    case "DELETE":
-      common.deleteSingle(res, req, result, () => {
-        data = querystring.parse(data.toString());
-        result.data = result.data.filter(val => {
-          return data.name !== val.name;
-        });
-      });
-      break;
+  let arr = ["queryAll", "querySingle", "addSingle", "deleteSingle", "update"];
+  for (let i = 0; i < arr.length; i++) {
+    if (req.url.includes(arr[i])) {
+      common[arr[i]](res, req, arr[i]);
+    }
   }
 });
