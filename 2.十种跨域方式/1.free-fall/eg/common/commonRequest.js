@@ -56,7 +56,12 @@ var globalRequest = {
   },
   //删除
   deleteRequest: function(data, success, error) {
-    globalAjax.delete(data, "http://localhost:3000/deleteSingle", success, error);
+    globalAjax.delete(
+      data,
+      "http://localhost:3000/deleteSingle",
+      success,
+      error
+    );
   },
   //更新
   putRequest: function(data, success, error) {

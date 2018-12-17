@@ -93,7 +93,6 @@ let common = {
       data = querystring.parse(data.toString());
       console.log("请求数据：", data);
       sql_update(data.id, data.s_name, data.s_english, data.s_math, r => {
-        console.log("----------------------", r);
         sql_query(r => {
           let result = { code: 200 };
           result.data = r;
@@ -104,7 +103,6 @@ let common = {
   }
 };
 server.on("request", function(req, res) {
-  // let url = /\/(\w)+\?/g.exec(req.url)[0].slice(1, -1);
   let arr = ["queryAll", "querySingle", "addSingle", "deleteSingle", "update"];
   for (let i = 0; i < arr.length; i++) {
     if (req.url.includes(arr[i])) {
