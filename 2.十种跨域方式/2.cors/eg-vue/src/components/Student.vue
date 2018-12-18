@@ -81,14 +81,14 @@ export default {
     handleConfirm() {
       this.dialogFormVisible = false;
       if (this.isAdd) {
-        this.axios.post("http://localhost:3000/add", this.form).then(result => {
-          this.tableData = result.data.data;
-        });
+        this.axios
+          .post("http://localhost:3000/add", this.qs.stringify(this.form))
+          .then(result => {
+            this.tableData = result.data.data;
+          });
       } else {
         this.axios
-          .put("http://localhost:3000/updata", {
-            data: this.qs.stringify(this.form)
-          })
+          .put("http://localhost:3000/updata", this.qs.stringify(this.form))
           .then(result => {
             this.tableData = result.data.data;
           });

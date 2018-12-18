@@ -7,6 +7,7 @@ const connection = mysql.createConnection({
 });
 connection.connect();
 function sql_add(s_name, s_english, s_math, callback) {
+  console.log("sql-add", s_name, s_english, s_math);
   let userAddSql = "INSERT INTO student(s_name,s_english,s_math) VALUES(?,?,?)";
   let userAddSql_params = [s_name, s_english, s_math];
   connection.query(userAddSql, userAddSql_params, function(err, result) {

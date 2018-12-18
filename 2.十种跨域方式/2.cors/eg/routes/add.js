@@ -10,20 +10,12 @@ router.all("*", function(req, res, next) {
 });
 /* GET home page. */
 router.post("/", function(req, res, next) {
-  let data = "";
-  req.on("data", chunk => {
-    data += chunk;
-  });
-  req.on("end", () => {
-    data = querystring.parse(data.toString());
-    console.log(data);
-    sql_add(data.s_name, data.s_english, data.s_math, r => {
-      console.log(r);
-      sql_query(r => {
-        let result = { code: 200 };
-        result.data = r;
-        res.send(result);
-      });
+  let data = req.body;
+  sql_add(data.s_name, data.s_english, data.s_math, r => {
+    sql_query(r => {
+      let result = { code: 200 };
+      result.data = r;
+      res.send(result);
     });
   });
 });
