@@ -16,7 +16,6 @@ a页面
     xhr.send('name="zbc"&age=26')
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            debugger
             console.log(xhr.response)
         }
     }

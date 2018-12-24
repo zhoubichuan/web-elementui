@@ -11,7 +11,6 @@
 <script>
     let xhr = new XMLHttpRequest()
     xhr.open("post", "http://localhost:3000")
-    /* 2.前端发头 会发两次请求把条件判断 === “post”去掉*/
     xhr.setRequestHeader("name", "znc")
     xhr.send('name="zbc"&age=26')
     xhr.onreadystatechange = () => {
