@@ -10,9 +10,9 @@
     <script type="text/javascript">
         window.onmessage = function (e) {
             //得到父页面的消息
-            console.log(e.data)
+            document.write(e.data)
             //给父页面发送消息
-            e.source.postMessage('这是传递给父页面的信息:b', e.origin)
+            e.source.postMessage('b.html页面内容', e.origin)
         }
     </script>
 </body>
