@@ -11,18 +11,15 @@ app.on("request", (req, res) => {
     req.on("data", chunk => {
       data += chunk;
     });
-    /* 1.设置4000可以跨域 */
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:4000");
-
-    /* 2.前端发头过来了 */
-    res.setHeader("Access-Control-Allow-Headers", "name");
     req.on("end", () => {
       data = querystring.parse(data);
       res.write(querystring.stringify(data));
       res.end();
     });
   } else {
-    res.write(querystring.stringify({ name: "zzb" }));
+    res.write(querystring.stringify({
+      name: "zzb"
+    }));
     res.end();
   }
 });

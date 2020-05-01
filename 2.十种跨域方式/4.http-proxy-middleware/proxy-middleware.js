@@ -9,6 +9,6 @@ app.use(
   })
 );
 
-app.listen(4000, () => {
-  console.log("监听4000端口");
+app.listen(3000, () => {
+  console.log("监听3000端口");
 });
