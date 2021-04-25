@@ -24,8 +24,8 @@ module.exports = {
       // 其他的 Vssue 配置
       owner: 'zhoubichuan', //github账户名
       repo: 'Web-Vue', //github一个项目的名称
-      clientId: 'Iv1.2923ba5d4de48a3c',//注册的Client ID
-      clientSecret: '110210',//注册的Client Secret
+      clientId: 'Iv1.2923ba5d4de48a3c', //注册的Client ID
+      clientSecret: '110210', //注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     },
     "vuepress-plugin-boxx": ["vuepress-plugin-boxx"]
@@ -86,22 +86,19 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
-          text: '基础知识',
-          items: [{
-            text: '1.前端工程化',
-            link: '/base/build/1.start'
-          }
-          ]
-        },
-        {
-          text: '源码知识',
-          items: [
-          {
-            text: 'ElementUI',
-            link: '/source/element/Pagination'
+            text: '基础知识',
+            items: [{
+              text: '1.前端工程化',
+              link: '/base/build/1.start'
+            }]
           },
-          ]
-        }
+          {
+            text: '源码知识',
+            items: [{
+              text: 'ElementUI',
+              link: '/source/element/inde'
+            }, ]
+          }
         ],
         sidebar: {
           '/base/build/': [
@@ -119,13 +116,88 @@ module.exports = {
             '12.skill',
             '13.com',
             '14.data',
-            '15.api'],
-          '/source/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
-            'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
-            'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
-            'Form', 'FormItem', 'Tabs', 'TabPane', 'Tag', 'Tree', 'Alert', 'Slider', 'Icon', 'Row', 'Col', 'Upload', 'Progress',
-            'Spinner', 'Badge', 'Card', 'Rate', 'Steps', 'Step', 'Carousel', 'Scrollbar', 'CarouselItem', 'Collapse', 'CollapseItem', 'Cascader', 'ColorPicker', 'Transfer',
-            'Container', 'Header', 'Aside', 'Main', 'Footer', 'Timeline', 'TimelineItem', 'Link', 'Divider', 'Image', 'Calendar', 'Backtop', 'PageHeader', 'CascaderPanel', 'Avatar', 'Drawer', 'Popconfirm', 'CollapseTransition', 'MessageBox'
+            '15.api'
+          ],
+          '/source/element/': [
+            'inde',
+            'Pagination',
+            'Dialog',
+            'Autocomplete',
+            'Dropdown',
+            'DropdownMenu',
+            'DropdownItem',
+            'Menu',
+            'Submenu',
+            'MenuItem',
+            'MenuItemGroup',
+            'Input',
+            'InputNumber',
+            'Radio',
+            'RadioGroup',
+            'RadioButton',
+            'Checkbox',
+            'CheckboxButton',
+            'CheckboxGroup',
+            'Switch',
+            'Option',
+            'OptionGroup',
+            'Button',
+            'ButtonGroup',
+            'Table',
+            'TableColumn',
+            'DatePicker',
+            'TimeSelect',
+            'TimePicker',
+            'Popover',
+            'Tooltip',
+            'Breadcrumb',
+            'BreadcrumbItem',
+            'Form',
+            'FormItem',
+            'Tabs',
+            'TabPane',
+            'Tag',
+            'Tree',
+            'Alert',
+            'Slider',
+            'Icon',
+            'Row',
+            'Col',
+            'Upload',
+            'Progress',
+            'Spinner',
+            'Badge',
+            'Card',
+            'Rate',
+            'Steps',
+            'Step',
+            'Carousel',
+            'Scrollbar',
+            'CarouselItem',
+            'Collapse',
+            'CollapseItem',
+            'Cascader',
+            'ColorPicker',
+            'Transfer',
+            'Container',
+            'Header',
+            'Aside',
+            'Main',
+            'Footer',
+            'Timeline',
+            'TimelineItem',
+            'Link',
+            'Divider',
+            'Image',
+            'Calendar',
+            'Backtop',
+            'PageHeader',
+            'CascaderPanel',
+            'Avatar',
+            'Drawer',
+            'Popconfirm',
+            'CollapseTransition',
+            'MessageBox'
           ],
         }
       }
