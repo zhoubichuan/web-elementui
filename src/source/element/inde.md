@@ -1,0 +1,74 @@
+---
+lang: zh-CN
+sidebarDepth: 2
+meta:
+  - name: description
+    content: 个人总结的vuepress学习技术文档-主题
+  - name: keywords
+    content: vuepress,最新技术文档,vuepress主题
+---
+
+# ElementUI源码解析
+## 目录结构
+```sh
+├── build            # 放置webpack的配置文件
+├── examples         # 放置element api的页面文档
+├── node_modules     # 项目依赖包目录
+├── packages         # 放置element的组件（css样式放置在这个目录下theme-chalk下）
+│   ├── xxx          # xxx组件
+│   └── yyy          # yyy组件
+├── src
+│   ├── directives   # 放置自定义指令
+│   ├── locale       # 放置语言的配置文件
+│   ├── mixins       # 放置组件用的混合文件
+│   ├── transitions  # 放置动画配置文件
+│   ├── utils        # 放置用到工具函数文件
+│   └── index.js     # 组件注册的入口文件
+├── test             # 测试文件
+├── types            # typescript的数据类
+├── package.json     # 包管理文件
+└── yarn.lock        # yarn依赖信息文件
+```
+## 入口文件
+src/index.js
+```js
+export default {
+  version: '2.15.1',
+  locale: locale.use,
+  i18n: locale.i18n,
+  install, // 通过Vue.use()可以全局引入所有组件
+  ... // ElementUI组件
+};
+```
+```js
+const install = function(Vue, opts = {}) {
+  locale.use(opts.locale);
+  locale.i18n(opts.i18n);
+
+  components.forEach(component => {
+    Vue.component(component.name, component);
+  });
+
+  Vue.use(InfiniteScroll);
+  Vue.use(Loading.directive);
+
+  Vue.prototype.$ELEMENT = {
+    size: opts.size || '',
+    zIndex: opts.zIndex || 2000
+  };
+
+  Vue.prototype.$loading = Loading.service;
+  Vue.prototype.$msgbox = MessageBox;
+  Vue.prototype.$alert = MessageBox.alert;
+  Vue.prototype.$confirm = MessageBox.confirm;
+  Vue.prototype.$prompt = MessageBox.prompt;
+  Vue.prototype.$notify = Notification;
+  Vue.prototype.$message = Message;
+
+};
+```
+我们在使用`ElemnentUI`时，一般会先引入组件，然后`Vue.use(ElementUI)`,会触发`install`方法，循环全部组件，安装为全局组件，所以后续页面中使用组件时不需要再次引入。
+
+当我们在页面中单独引入`ElemnentUI`某个组件时，由于没有触发`install`方法，引入那个组件就加载哪个组件，从而减少包的体积。
+
+## ElementUI组件解析
