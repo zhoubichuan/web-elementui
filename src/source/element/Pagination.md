@@ -9,3 +9,27 @@ meta:
 ---
 
 # 一、Pagination
+```sh
+├── packages         
+│   ├── pagination         
+│   ├   ├── src
+│   ├   │    ├── pager.vue
+│   ├   │    └── pagination.js
+│   ├   └── index.js   # 组件入口
+```
+## 入口
+index.js
+```js
+import Pagination from './src/pagination';
+
+/* istanbul ignore next */
+Pagination.install = function(Vue) {
+  Vue.component(Pagination.name, Pagination);
+};
+
+export default Pagination;
+```
+## 组件主体
+pagination.js
+```js
+```
