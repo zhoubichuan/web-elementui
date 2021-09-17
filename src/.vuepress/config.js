@@ -1,7 +1,8 @@
 module.exports = {
   // 基础配置
-  base: '/Web-ElementUI/', // 部署站点的基础路径
-  description: 'ElementUI相关知识点',
+  base: '/web-elementui/', // 部署站点的基础路径
+  description: 'ElementUI学习笔记',
+  title: 'ElementUI学习笔记',
   plugins: {
     // 名称：@vuepress/plugin-pwa 网页内容有更新的时候有刷新按钮。可以把网页保存到桌面，当一个app一样
     '@vuepress/pwa': {
@@ -29,13 +30,6 @@ module.exports = {
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     },
     "vuepress-plugin-boxx": ["vuepress-plugin-boxx"]
-  },
-  locales: {
-    // 默认标题
-    '/': {
-      title: 'ElementUI知识专项',
-      description: 'ElementUI相关知识点总结'
-    }
   },
   markdown: {
     lineNumbers: true // 代码块显示行号
@@ -86,118 +80,224 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
-            text: '基础知识',
-            items: [{
-              text: '1.前端工程化',
-              link: '/base/build/1.start'
-            }]
-          },
-          {
-            text: '源码知识',
-            items: [{
-              text: 'ElementUI',
-              link: '/source/element/inde'
-            }, ]
-          }
+          text: 'ElementUI源码解析',
+          items: [
+            {
+              text: '一.Basic部分',
+              link: '/elementui/base/1.index'
+            },
+            {
+              text: '二.Form部分',
+              link: '/elementui/form/1.index'
+            },
+            {
+              text: '三.Data部分',
+              link: '/elementui/data/1.index'
+            },
+            {
+              text: '四.Notice部分',
+              link: '/elementui/notice/1.index'
+            },
+            {
+              text: '五.Navigation部分',
+              link: '/elementui/navigation/1.index'
+            },
+            {
+              text: '六.Others部分',
+              link: '/elementui/others/1.index'
+            }
+          ]
+        },
+        {
+          text: 'Element-Plus源码解析',
+          items: [
+            {
+              text: '一.Basic部分',
+              link: '/element-plus/base/1.index'
+            },
+            {
+              text: '二.Form部分',
+              link: '/element-plus/form/1.index'
+            },
+            {
+              text: '三.Data部分',
+              link: '/element-plus/data/1.index'
+            },
+            {
+              text: '四.Notice部分',
+              link: '/element-plus/notice/1.index'
+            },
+            {
+              text: '五.Navigation部分',
+              link: '/element-plus/navigation/1.index'
+            },
+            {
+              text: '六.Others部分',
+              link: '/element-plus/others/1.index'
+            }
+          ]
+        }
         ],
         sidebar: {
-          '/base/build/': [
-            '1.start',
-            '2.webpack',
-            '3.file',
-            '4.single',
-            '5.page',
-            '6.module',
-            '7.devide',
-            '8.project',
-            '9.utils',
-            '10.ui',
-            '11.data',
-            '12.skill',
-            '13.com',
-            '14.data',
-            '15.api'
+          '/elementui/base/': [
+            '1.index',
+            '1.layout',
+            '2.container',
+            '3.button',
+            '4.link',
+            '5.space',
+            '6.scrollbar',
+            '7.config'
           ],
-          '/source/element/': [
-            'inde',
-            'Pagination',
-            'Dialog',
-            'Autocomplete',
-            'Dropdown',
-            'DropdownMenu',
-            'DropdownItem',
-            'Menu',
-            'Submenu',
-            'MenuItem',
-            'MenuItemGroup',
-            'Input',
-            'InputNumber',
-            'Radio',
-            'RadioGroup',
-            'RadioButton',
-            'Checkbox',
-            'CheckboxButton',
-            'CheckboxGroup',
-            'Switch',
-            'Option',
-            'OptionGroup',
-            'Button',
-            'ButtonGroup',
-            'Table',
-            'TableColumn',
-            'DatePicker',
-            'TimeSelect',
-            'TimePicker',
-            'Popover',
-            'Tooltip',
-            'Breadcrumb',
-            'BreadcrumbItem',
-            'Form',
-            'FormItem',
-            'Tabs',
-            'TabPane',
-            'Tag',
-            'Tree',
-            'Alert',
-            'Slider',
-            'Icon',
-            'Row',
-            'Col',
-            'Upload',
-            'Progress',
-            'Spinner',
-            'Badge',
-            'Card',
-            'Rate',
-            'Steps',
-            'Step',
-            'Carousel',
-            'Scrollbar',
-            'CarouselItem',
-            'Collapse',
-            'CollapseItem',
-            'Cascader',
-            'ColorPicker',
-            'Transfer',
-            'Container',
-            'Header',
-            'Aside',
-            'Main',
-            'Footer',
-            'Timeline',
-            'TimelineItem',
-            'Link',
-            'Divider',
-            'Image',
-            'Calendar',
-            'Backtop',
-            'PageHeader',
-            'CascaderPanel',
-            'Avatar',
-            'Drawer',
-            'Popconfirm',
-            'CollapseTransition',
-            'MessageBox'
+          '/elementui/form/': [
+            '1.index',
+            '1.radio',
+            '2.checkbox',
+            '3.input',
+            '4.inputnumber',
+            '5.select',
+            '6.selectv2',
+            '7.cascader',
+            '8.switch',
+            '9.slider',
+            '10.timepicker',
+            '11.timeselect',
+            '12.datepicker',
+            '13.datetimepicker',
+            '14.upload',
+            '15.rate',
+            '16.colorpicker',
+            '17.transfer',
+            '18.form'
+          ],
+          '/elementui/data/': [
+            '1.index',
+            '1.table',
+            '2.tag',
+            '3.progress',
+            '4.tree',
+            '5.pagination',
+            '6.badge',
+            '7.avatar',
+            '8.skeleton',
+            '9.empty',
+            '10.descriptions',
+            '11.result',
+          ],
+          '/elementui/notice/': [
+            '1.index',
+            '1.alert',
+            '2.loading',
+            '3.message',
+            '4.messagebox',
+            '5.notification'
+          ],
+          '/elementui/navigation/': [
+            '1.index',
+            '1.affix',
+            '2.navmenu',
+            '3.tabs',
+            '4.breadcrumb',
+            '5.pageheader',
+            '6.dropdown',
+            '7.steps',
+          ],
+          '/elementui/others/': [
+            '1.index',
+            '1.dialog',
+            '2.tooltip',
+            '3.popover',
+            '4.popconfirm',
+            '5.card',
+            '6.carousel',
+            '7.collapse',
+            '8.timeline',
+            '9.divider',
+            '10.calendar-calendar',
+            '11.image',
+            '12.backtop',
+            '13.infinitescroll',
+            '14.drawer'
+          ],
+          '/element-plus/base/': [
+            '1.index',
+            '1.layout',
+            '2.container',
+            '3.button',
+            '4.link',
+            '5.space',
+            '6.scrollbar',
+            '7.config'
+          ],
+          '/element-plus/form/': [
+            '1.index',
+            '1.radio',
+            '2.checkbox',
+            '3.input',
+            '4.inputnumber',
+            '5.select',
+            '6.selectv2',
+            '7.cascader',
+            '8.switch',
+            '9.slider',
+            '10.timepicker',
+            '11.timeselect',
+            '12.datepicker',
+            '13.datetimepicker',
+            '14.upload',
+            '15.rate',
+            '16.colorpicker',
+            '17.transfer',
+            '18.form'
+          ],
+          '/element-plus/data/': [
+            '1.index',
+            '1.table',
+            '2.tag',
+            '3.progress',
+            '4.tree',
+            '5.pagination',
+            '6.badge',
+            '7.avatar',
+            '8.skeleton',
+            '9.empty',
+            '10.descriptions',
+            '11.result',
+          ],
+          '/element-plus/notice/': [
+            '1.index',
+            '1.alert',
+            '2.loading',
+            '3.message',
+            '4.messagebox',
+            '5.notification'
+          ],
+          '/element-plus/navigation/': [
+            '1.index',
+            '1.affix',
+            '2.navmenu',
+            '3.tabs',
+            '4.breadcrumb',
+            '5.pageheader',
+            '6.dropdown',
+            '7.steps',
+          ],
+          '/element-plus/others/': [
+            '1.index',
+            '1.dialog',
+            '2.tooltip',
+            '3.popover',
+            '4.popconfirm',
+            '5.card',
+            '6.carousel',
+            '7.collapse',
+            '8.timeline',
+            '9.divider',
+            '10.calendar-calendar',
+            '11.image',
+            '12.backtop',
+            '13.infinitescroll',
+            '14.drawer'
           ],
         }
       }
