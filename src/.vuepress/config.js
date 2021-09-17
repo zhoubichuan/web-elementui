@@ -227,7 +227,7 @@ module.exports = {
             '4.link',
             '5.space',
             '6.scrollbar',
-            '7.config'
+            '7.config-provider'
           ],
           '/element-plus/form/': [
             '1.index',
