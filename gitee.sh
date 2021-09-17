@@ -11,7 +11,7 @@ git init
 git checkout --orphan gh-pages
 git add .
 git commit -m 'gh-pages'
-git remote add origin https://gitee.com/zhoubichuan/we-elementui.git
+git remote add origin https://gitee.com/zhoubichuan/web-elementui.git
 git push -f origin gh-pages
 
 # 4.返回初始目录
