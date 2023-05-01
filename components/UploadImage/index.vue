@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "ButtonGroup",
+  name: "UploadImage",
   props: {
     value: {
       type: String,
