@@ -10,7 +10,7 @@ import MeButton from './ButtonGroup/MeButton.vue'
 import FormItem from './FormItem.vue'
 import DialogForm from './Dialog/DialogForm.vue'
 import SliderRight from './SliderRight.vue'
-import UploadImage from './UploadImage'
+import UploadImage from './UploadImage/index.vue'
 import { version } from '/package.json';
 
 const components = {

@@ -1,12 +1,13 @@
 let gulp = require('gulp');
+let { VueLoaderPlugin } = require('vue-loader')
 let clean = require('gulp-clean'); // 打包之前，先清空原来的文件
 // let gulpRemoveHtml = require('gulp-remove-html'); // 标签清除
 // let removeEmptyLines = require('gulp-remove-empty-lines'); // 清除空白行
 // let htmlmin = require('gulp-htmlmin'); // html压缩组件
 // let minifycss = require('gulp-minify-css'); // 压缩CSS为一行
 // // gulp-ugilfy无法压缩ES6，如果代码有使用ES6的语法需先编译成ES5，否则压缩会失败
-// let uglify = require('gulp-uglify'); // 获取 uglify 模块（用于压缩 JS）
-// let babel = require('gulp-babel'); // 将ES6编译成ES5
+let uglify = require('gulp-uglify'); // 获取 uglify 模块（用于压缩 JS）
+let babel = require('gulp-babel'); // 将ES6编译成ES5
 // let imgmin = require('gulp-imagemin'); // 压缩图片
 let distBasePath = 'dist/'; //构建输出的目录
 let comPath = 'components/'
@@ -49,14 +50,11 @@ gulp.task('clean', function () {
 //压缩js
 // gulp.task('jscompress', function () {
 //   return gulp.src([comPath+'**/*.js'])
-//     // .pipe(babel({
-//     //   presets: ['es2015']
-//     // }))
 //     .pipe(babel({
 // 		presets: ['@babel/preset-env']
 // 	}))
-//     .pipe(uglify())
-//     .pipe(gulp.dest(distBasePath + 'js'));
+//     // .pipe(uglify())
+//     .pipe(gulp.dest(distBasePath));
 // })
 
 // 压缩图片
@@ -68,7 +66,12 @@ gulp.task('clean', function () {
 
 // 三方库复制
 gulp.task('copelibrary', function () {
-  return gulp.src([comPath+'**'])
+  return gulp.src([
+        comPath+'**/*.vue',
+        comPath+'**/*.scss',
+        comPath+'**/*.json',
+        comPath+'**/*.md'
+    ])
     // .pipe(imgmin())
     .pipe(gulp.dest(distBasePath))
 })

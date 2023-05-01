@@ -1,19 +1,16 @@
 {
   "name": "web-elementui",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
-  "hommepage": "https://github.com/zhoubichuan/web-elementui/",
+  "hommepage": "https://github.com/zhoubichuan/web-elementui",
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
     "build:doc": "vuepress build src",
-    "build:com": "gulp",
-    "deploy": "bash deploy.sh",
-    "github": "bash github.sh",
-    "gitee": "bash gitee.sh"
+    "build:com": "gulp"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.8.2",
@@ -31,9 +28,6 @@
     "vuepress-plugin-boxx": "0.0.7"
   },
   "dependencies": {
-    "less": "^3.0.2",
-    "vue-echarts": "^3.0.7",
-    "vuepress": "^1.9.7",
-    "vuepress-plugin-demo-container": "^0.2.0"
+    "less": "^3.0.2"
   }
 }
