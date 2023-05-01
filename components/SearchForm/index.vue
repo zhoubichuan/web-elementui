@@ -92,6 +92,21 @@ export default {
     this.handleInit()
   },
   methods: {
+    $devideArr (arr, num) {
+      let index = 0
+      let items = []
+      // if (arr.length % 2 === 1) {
+      //   arr = arr.push({})
+      // }
+      while (index < arr.length) {
+        if (arr[index] && arr[index]['singleFormItem']) {
+          items.push(arr.slice(index, index += 1))
+        } else {
+          items.push(arr.slice(index, index += num))
+        }
+      }
+      return items
+    },
     handleInit () {
       // this.condition.forEach(item => {
       //   this.formInline[item.name] = item.defaultValue || ''

@@ -28,7 +28,7 @@ const nav = [{
     ]
   },
   {
-    text: 'Element-Plus源码解析',
+    text: '组件的二次封装',
     items: [
       {
         text: '一.Basic部分',

@@ -5,14 +5,12 @@
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
   "hommepage": "https://github.com/zhoubichuan/web-elementui/",
-  "private": true,
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
     "build:doc": "vuepress build src",
     "build:com": "gulp",
-    "publish":"npm run build:com && cd components && npm publish",
     "deploy": "bash deploy.sh",
     "github": "bash github.sh",
     "gitee": "bash gitee.sh"
