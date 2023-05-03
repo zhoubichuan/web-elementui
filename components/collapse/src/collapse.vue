@@ -6,7 +6,7 @@
 
 <script type="text/ecmascript-6">
   export default {
-    name: 'Collapse',
+    name: 'WebCollapse',
     model: {
       prop: 'name',
       event: 'update'

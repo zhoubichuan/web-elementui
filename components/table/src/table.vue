@@ -24,7 +24,7 @@
 import Pagination from '../../pagination/src/pagination.vue'
 
 export default {
-  name: 'TablePage',
+  name: 'WebTablePage',
   components: {
     Pagination
   },

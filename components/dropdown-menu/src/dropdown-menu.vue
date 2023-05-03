@@ -6,7 +6,7 @@
 <script>
 
 export default {
-  name: 'MeDropdownMenu',
+  name: 'WebDropdownMenu',
   data () {
     return {
       loading: false

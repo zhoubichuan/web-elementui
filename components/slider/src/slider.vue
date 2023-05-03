@@ -37,7 +37,7 @@
 import modal from '../../modal/src/modal'
 
 export default {
-  name: 'SliderRight',
+  name: 'WebSliderRight',
   components: {
     modal
   },

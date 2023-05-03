@@ -1,12 +1,12 @@
 <template>
-  <el-dropdown size="mini" v-bind="$attrs" v-on="$listeners" @click="handleClick">
+  <el-button size="mini" :loading="loading" v-bind="$attrs" v-on="$listeners" @click="handleClick">
     <slot></slot>
-  </el-dropdown>
+  </el-button>
 </template>
 <script>
 
 export default {
-  name: 'MeDropdown',
+  name: 'WebButton',
   data () {
     return {
       loading: false
@@ -15,7 +15,7 @@ export default {
   props: {
     duration: {
       type: Number,
-      default: 3000
+      default: 1000
     }
   },
   methods: {
@@ -30,7 +30,7 @@ export default {
     }
   },
   install (Vue) {
-    Vue.component('MeDropdown', this)
+    Vue.component('MeButton', this)
   }
 }
 </script>

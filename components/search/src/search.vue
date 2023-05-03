@@ -24,17 +24,17 @@
         </el-row>
       </el-form>
       </transition>
-      <button-group>
-        <me-button type="primary" @click="handleQuery">查询</me-button>
-        <me-button @click="onSubmit">重置</me-button>
-        <me-button v-if="condition.length>6" type="text" @click="searchMore">+ 更多选项</me-button>
-      </button-group>
+      <web-button-group>
+        <web-button type="primary" @click="handleQuery">查询</web-button>
+        <web-button @click="onSubmit">重置</web-button>
+        <web-button v-if="condition.length>6" type="text" @click="searchMore">+ 更多选项</web-button>
+      </web-button-group>
     </el-collapse-item>
   </el-collapse>
 </template>
 <script>
 export default {
-  name: 'Search',
+  name: 'WebSearch',
   components: {
     searchInput: () => import('./SearchInput.vue'),
     searchSelect: () => import('./SearchSelect.vue'),

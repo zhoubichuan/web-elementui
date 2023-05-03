@@ -47,15 +47,15 @@ gulp.task('clean', function () {
 // })
 
 
-//压缩js
-gulp.task('jscompress', function () {
-  return gulp.src([comPath+'**/*.js'])
-    .pipe(babel({
-		presets: ['@babel/preset-env']
-	}))
-    // .pipe(uglify())
-    .pipe(gulp.dest(distBasePath));
-})
+// //压缩js
+// gulp.task('jscompress', function () {
+//   return gulp.src([comPath+'**/*.js'])
+//     .pipe(babel({
+// 		presets: ['@babel/preset-env']
+// 	}))
+//     // .pipe(uglify())
+//     .pipe(gulp.dest(distBasePath));
+// })
 
 // 压缩图片
 // gulp.task('imgcompress', function () {
@@ -70,7 +70,8 @@ gulp.task('copelibrary', function () {
         comPath+'**/*.vue',
         comPath+'**/*.scss',
         comPath+'**/*.json',
-        comPath+'**/*.md'
+        comPath+'**/*.md',
+        comPath+'**/*.js'
     ])
     // .pipe(imgmin())
     .pipe(gulp.dest(distBasePath))
@@ -90,7 +91,7 @@ gulp.task('default', gulp.series(
     'clean', 
     // 'htmlcompress',
     // 'csscompress',
-    'jscompress',
+    // 'jscompress',
     // 'imgcompress',
     'copelibrary'
     ));

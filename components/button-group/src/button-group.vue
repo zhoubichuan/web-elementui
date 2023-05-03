@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: 'ButtonGroup',
+  name: 'WebButtonGroup',
   props: {
     justify: {
       type: String,

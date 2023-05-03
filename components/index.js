@@ -1,8 +1,8 @@
 import Pagination from './pagination/index.js'
 // import Dialog from './dialog/index.js'
 // import Autocomplete from './autocomplete/index.js'
-// import Dropdown from './dropdown/index.js'
-// import DropdownMenu from './dropdown-menu/index.js'
+import Dropdown from './dropdown/index.js'
+import DropdownMenu from './dropdown-menu/index.js'
 // import DropdownItem from './dropdown-item/index.js'
 // import Menu from './menu/index.js'
 // import Submenu from './submenu/index.js'
@@ -20,13 +20,12 @@ import Pagination from './pagination/index.js'
 // import Select from './select/index.js'
 // import Option from './option/index.js'
 // import OptionGroup from './option-group/index.js'
-// import Button from './button/index.js'
-// import ButtonGroup from './button-group/index.js'
+import Button from './button/index.js'
+import ButtonGroup from './button-group/index.js'
 import Search from './search/index.js'
 import Dialog from './dialog/index.js'
 import Slider from './slider/index.js'
 import Modal from './modal/index.js'
-import ButtonGroup from './button-group/index.js'
 import CommonForm from './common-form/index.js'
 import UploadImage from './upload-image/index.js'
 import FormItem from './form-item/index.js'
@@ -100,8 +99,8 @@ const components = [
   Pagination,
   // Dialog,
   // Autocomplete,
-  // Dropdown,
-  // DropdownMenu,
+  Dropdown,
+  DropdownMenu,
   // DropdownItem,
   // Menu,
   // Submenu,
@@ -119,8 +118,7 @@ const components = [
   // Select,
   // Option,
   // OptionGroup,
-  // Button,
-  // ButtonGroup,
+  Button,
   Search,
   Dialog,
   Slider,
@@ -225,8 +223,8 @@ export default {
   Pagination,
   // Dialog,
   // Autocomplete,
-  // Dropdown,
-  // DropdownMenu,
+  Dropdown,
+  DropdownMenu,
   // DropdownItem,
   // Menu,
   // Submenu,
@@ -244,13 +242,12 @@ export default {
   // Select,
   // Option,
   // OptionGroup,
-  // Button,
-  // ButtonGroup,
+  Button,
+  ButtonGroup,
   Search,
   Dialog,
   Slider,
   Modal,
-  ButtonGroup,
   UploadImage,
   CommonForm,
   FormItem,

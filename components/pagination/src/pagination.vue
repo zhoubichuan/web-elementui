@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: 'Pagination',
+  name: 'WebPagination',
   model: {
     prop: 'page'
     // event: 'updatePage'

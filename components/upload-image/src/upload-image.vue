@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'UploadImage',
+  name: 'WebUploadImage',
   props: {
     value: {
       type: String,

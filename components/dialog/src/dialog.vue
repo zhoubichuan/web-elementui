@@ -12,14 +12,14 @@
   >
     <slot></slot>
     <div slot="footer" class="dialog-footer">
-      <me-button @click="cancel">取 消</me-button>
-      <me-button type="primary" @click="create">确 定</me-button>
+      <web-button @click="cancel">取 消</web-button>
+      <web-button type="primary" @click="create">确 定</web-button>
     </div>
   </el-dialog>
 </template>
 <script>
 export default {
-  name: 'DialogForm',
+  name: 'WebDialogForm',
   props: {
     value: {
       tyep: Boolean,

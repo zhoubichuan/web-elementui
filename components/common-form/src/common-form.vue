@@ -10,7 +10,7 @@
 
 <script type="text/ecmascript-6">
 export default {
-  name: 'CommonForm',
+  name: 'WebCommonForm',
   props: {
     label: {
         type: String
