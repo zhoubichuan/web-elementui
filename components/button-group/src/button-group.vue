@@ -7,22 +7,19 @@
 </template>
 <script>
 export default {
-  name: "ButtonGroup",
+  name: 'ButtonGroup',
   props: {
     justify: {
       type: String,
-      default: "center",
-    },
+      default: 'center'
+    }
   },
-  data() {
+  data () {
     return {
-      addModalFlag: false,
-    };
+      addModalFlag: false
+    }
   },
-  install(Vue) {
-    Vue.component("ButtonGroup", this);
-  },
-};
+}
 </script>
 <style>
 .button-group {

@@ -9,11 +9,11 @@ let clean = require('gulp-clean'); // 打包之前，先清空原来的文件
 let uglify = require('gulp-uglify'); // 获取 uglify 模块（用于压缩 JS）
 let babel = require('gulp-babel'); // 将ES6编译成ES5
 // let imgmin = require('gulp-imagemin'); // 压缩图片
-let distBasePath = 'dist/'; //构建输出的目录
+let distBasePath = 'lib/'; //构建输出的目录
 let comPath = 'components/'
 //删除dist文件
 gulp.task('clean', function () {
-  return gulp.src('dist', {allowEmpty: true}) //src 匹配文件
+  return gulp.src('lib', {allowEmpty: true}) //src 匹配文件
     .pipe(clean()); //清除dist目录
 });
 
@@ -48,14 +48,14 @@ gulp.task('clean', function () {
 
 
 //压缩js
-// gulp.task('jscompress', function () {
-//   return gulp.src([comPath+'**/*.js'])
-//     .pipe(babel({
-// 		presets: ['@babel/preset-env']
-// 	}))
-//     // .pipe(uglify())
-//     .pipe(gulp.dest(distBasePath));
-// })
+gulp.task('jscompress', function () {
+  return gulp.src([comPath+'**/*.js'])
+    .pipe(babel({
+		presets: ['@babel/preset-env']
+	}))
+    // .pipe(uglify())
+    .pipe(gulp.dest(distBasePath));
+})
 
 // 压缩图片
 // gulp.task('imgcompress', function () {
@@ -90,7 +90,7 @@ gulp.task('default', gulp.series(
     'clean', 
     // 'htmlcompress',
     // 'csscompress',
-    // 'jscompress',
+    'jscompress',
     // 'imgcompress',
     'copelibrary'
     ));

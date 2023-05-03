@@ -1,13 +1,5 @@
 <template>
-  <div >
-    <el-table
-      class="table"
-      size="mini"
-      v-bind="$attrs"
-      v-on="$listeners">
-        <slot></slot>
-    </el-table>
-    <el-pagination
+  <el-pagination
       class="pagination"
       layout="total, sizes, prev, pager, next, jumper"
       :total="pageData.total"
@@ -16,20 +8,19 @@
       :current-page="pageData.curPage"
       @size-change="handleSizeChange"
       :page-sizes="pageSizes"
-      @current-change="handleCurrentChange">
-    </el-pagination>
-  </div>
+      @current-change="handleCurrentChange"
+      >
+  </el-pagination>
 </template>
 <script>
-import pagination from '../Pagination'
-
 export default {
-  name: 'TablePage',
-  components: {
-    pagination
+  name: 'Pagination',
+  model: {
+    prop: 'page'
+    // event: 'updatePage'
   },
   props: {
-    value: {
+    page: {
       type: Object,
       default: () => ({
         curPage: 1,
@@ -38,25 +29,21 @@ export default {
       })
     },
     pageSizes: {
-      type: Array,
-      default: () => [10, 20, 50, 100, 200]
+      type: Array
     }
   },
   data () {
     return {
-      pageCount: 1,
-      pageData: this.value
+      pageData: this.page,
+      pageCount: 1
     }
   },
   watch: {
-    value (val) {
+    page (val) {
       this.pageData = val
     }
   },
   methods: {
-    updatePage (val) {
-      this.$emit('input', val)
-    },
     handleCurrentChange (val) {
       this.pageData.curPage = val
       this.$emit('input', this.pageData)
@@ -64,22 +51,12 @@ export default {
     handleSizeChange (val) {
       this.pageData.pageSize = val
       this.$emit('input', this.pageData)
-    },
-    handleSelectionChange () {
-
     }
-  },
-  install (Vue) {
-    Vue.component('TablePage', this)
   }
 }
 </script>
 <style scoped>
-.table {
-  overflow-y: auto;
-}
-.table >>> .el-table--scrollable-x .el-table__body-wrapper{
-  height: 100%;
-  overflow-y:auto ;
-}
+ .pagination >>> .el-pagination__jump{
+    float:right;
+  }
 </style>

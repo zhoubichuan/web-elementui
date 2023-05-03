@@ -19,35 +19,32 @@
 </template>
 <script>
 export default {
-  name: "DialogForm",
+  name: 'DialogForm',
   props: {
     value: {
       tyep: Boolean,
-      default: false,
+      default: false
     },
     name: {
-      type: String,
-    },
+      type: String
+    }
   },
-  data() {
+  data () {
     return {
-      dialogFormVisible: false,
-    };
+      dialogFormVisible: false
+    }
   },
   methods: {
-    handleCreate() {
-      this.dialogFormVisible = true;
+    handleCreate () {
+      this.dialogFormVisible = true
     },
-    cancel(){
+    cancel () {
       this.dialogFormVisible = false
     },
-    create() {
-      this.$emit("create");
-      this.dialogFormVisible = false;
-    },
-  },
-  install(Vue) {
-    Vue.component("DialogForm", this);
-  },
-};
+    create () {
+      this.$emit('create')
+      this.dialogFormVisible = false
+    }
+  }
+}
 </script>

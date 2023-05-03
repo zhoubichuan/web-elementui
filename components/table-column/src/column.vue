@@ -5,11 +5,7 @@
     </el-table-column>
 </template>
 <script>
-
 export default {
-  name: 'TableColumn',
-  install (Vue) {
-    Vue.component('TableColumn', this)
-  }
+  name: 'TableColumn'
 }
 </script>

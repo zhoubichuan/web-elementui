@@ -16,36 +16,33 @@
 
 <script>
 export default {
-  name: "UploadImage",
+  name: 'UploadImage',
   props: {
     value: {
       type: String,
-      default: "center",
+      default: 'center'
     },
     uptype: {
       type: String,
-      default: "image",
-    },
+      default: 'image'
+    }
   },
-  data() {
+  data () {
     return {
       dialogImageUrl: this.value,
-      dialogVisible: false,
-    };
+      dialogVisible: false
+    }
   },
   methods: {
-    handlePreview(file) {
-      this.dialogImageUrl = file.url;
-      this.dialogVisible = true;
+    handlePreview (file) {
+      this.dialogImageUrl = file.url
+      this.dialogVisible = true
     },
-    handleSuccess(response, file, fileList) {
-      this.$emit("input", response.url);
-    },
-  },
-  install(Vue) {
-    Vue.component("UploadImage", this);
-  },
-};
+    handleSuccess (response, file, fileList) {
+      this.$emit('input', response.url)
+    }
+  }
+}
 </script>
 <style>
 .button-group {

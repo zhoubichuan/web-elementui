@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import Render from './Render.js'
+import Render from '../../Render.js'
 
 export default {
   name: 'FormItem',
@@ -40,9 +40,6 @@ export default {
       tyep: Array,
       default: () => []
     }
-  },
-  install (Vue) {
-    Vue.component('FormItem', this)
   }
 }
 </script>

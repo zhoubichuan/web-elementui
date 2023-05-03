@@ -33,9 +33,8 @@
   </el-collapse>
 </template>
 <script>
-
 export default {
-  name: 'SearchForm',
+  name: 'Search',
   components: {
     searchInput: () => import('./SearchInput.vue'),
     searchSelect: () => import('./SearchSelect.vue'),
@@ -124,9 +123,6 @@ export default {
     handleChange (val) {
       console.log(val)
     }
-  },
-  install (Vue) {
-    Vue.component('SearchForm', this)
   }
 }
 </script>

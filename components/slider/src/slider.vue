@@ -34,79 +34,76 @@
   </el-drawer>
 </template>
 <script>
-import modal from "./Modal";
+import modal from '../../modal/src/modal'
 
 export default {
-  name: "SliderRight",
+  name: 'SliderRight',
   components: {
-    modal,
+    modal
   },
   props: {
     value: {
       type: Array,
-      default: () => [],
-    },
+      default: () => []
+    }
   },
-  data() {
+  data () {
     return {
-      activeName: "",
+      activeName: '',
       page: this.value,
-      drawer: false,
-    };
+      drawer: false
+    }
   },
   watch: {
     value: {
-      handler(val) {
-        this.page = val;
+      handler (val) {
+        this.page = val
         if (this.page.length) {
-          this.drawer = true;
+          this.drawer = true
         } else {
-          this.drawer = false;
+          this.drawer = false
         }
-        let data = this.page[this.page.length - 1];
-        this.activeName = data ? data.title : "";
+        let data = this.page[this.page.length - 1]
+        this.activeName = data ? data.title : ''
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   methods: {
-    handleClose(targetName) {
-      let tabs = this.page;
-      let activeName = this.activeName;
+    handleClose (targetName) {
+      let tabs = this.page
+      let activeName = this.activeName
       if (activeName === targetName) {
         tabs.forEach((tab, index) => {
           if (tab.data.nameEn === targetName) {
-            let nextTab = tabs[index + 1] || tabs[index - 1];
+            let nextTab = tabs[index + 1] || tabs[index - 1]
             if (nextTab) {
-              activeName = nextTab.data.nameEn;
+              activeName = nextTab.data.nameEn
             }
           }
-        });
-      }
-      this.activeName = activeName;
-      this.page = tabs.filter((tab) => tab.data.nameEn !== targetName);
-      if (this.page.length) {
-        this.drawer = true;
-      } else {
-        this.drawer = false;
-      }
-      this.$emit("input", this.page);
-    },
-    handleClear(done) {
-      this.$confirm("确认关闭？")
-        .then((_) => {
-          this.page = [];
-          this.drawer = false;
-          this.$emit("input", []);
-          done();
         })
-        .catch((_) => {});
+      }
+      this.activeName = activeName
+      this.page = tabs.filter((tab) => tab.data.nameEn !== targetName)
+      if (this.page.length) {
+        this.drawer = true
+      } else {
+        this.drawer = false
+      }
+      this.$emit('input', this.page)
     },
-  },
-  install(Vue) {
-    Vue.component("SliderRight", this);
-  },
-};
+    handleClear (done) {
+      this.$confirm('确认关闭？')
+        .then((_) => {
+          this.page = []
+          this.drawer = false
+          this.$emit('input', [])
+          done()
+        })
+        .catch((_) => {})
+    }
+  }
+}
 </script>
 <style scoped>
 .slider-right >>> .slider-button {

@@ -31,9 +31,6 @@
         this.activeName = val
         this.$emit('update', this.activeName)
       }
-    },
-    install (Vue) {
-      Vue.component('Collapse', this)
     }
   }
 </script>
