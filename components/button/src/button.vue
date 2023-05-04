@@ -1,39 +1,44 @@
 <template>
-  <el-button size="mini" :loading="loading" v-bind="$attrs" v-on="$listeners" @click="handleClick">
+  <el-button
+    size="mini"
+    :loading="loading"
+    v-bind="$attrs"
+    v-on="$listeners"
+    @click="handleClick"
+  >
     <slot></slot>
   </el-button>
 </template>
 <script>
-
 export default {
-  name: 'WebButton',
-  data () {
+  name: "WebButton",
+  data() {
     return {
-      loading: false
-    }
+      loading: false,
+    };
   },
   props: {
     duration: {
       type: Number,
-      default: 1000
-    }
+      default: 1000,
+    },
   },
   methods: {
-    handleClick () {
-      this.loading = true
+    handleClick() {
+      this.loading = true;
       let timer = setTimeout(() => {
-      this.loading = false
-      }, this.duration)
-      this.$once('hook:beforeDestory', () => {
-        clearTimeout(timer)
-      })
-    }
+        this.loading = false;
+      }, this.duration);
+      this.$once("hook:beforeDestory", () => {
+        clearTimeout(timer);
+      });
+    },
   },
-  install (Vue) {
-    Vue.component('MeButton', this)
-  }
-}
+};
 </script>
 <style>
-
+.el-icon-loading {
+  position: absolute;
+  left: 5px;
+}
 </style>

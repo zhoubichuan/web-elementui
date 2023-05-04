@@ -4,12 +4,12 @@
 // import 'static/css/reset.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import WebElementplus from '../../components/index.js'
+import WebElementui from '../../components/index.js'
 
 export default ({
     Vue
 }) => {
     Vue.use(ElementUI)
     // Vue.component('chart', VueECharts)
-    Vue.use(WebElementplus)
+    Vue.use(WebElementui)
 }
