@@ -1,8 +1,16 @@
+// import { webpackBundler } from '@vuepress/bundler-webpack'
+// import { defineUserConfig } from '@vuepress/cli'
 module.exports = {
   title: 'ElementUI学习笔记',
   description: 'ElementUI学习笔记',
   base: '/web-elementui/', // 部署站点的基础路径
   port: 3009,
+  // bundler: defineUserConfig({
+  //   bundler: webpackBundler({
+  //     postcss: {},
+  //     vue: {},
+  //   }),
+  // }),
   dest: 'web-elementui', // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },

@@ -1,8 +1,8 @@
 <template>
   <div :class="{ 'button-group': justify === 'center', 'global-group': true }">
-    <!-- <el-row type="flex" class="row-bg" :justify="justify">
+    <el-row type="flex" class="row-bg" :justify="justify">
       <el-col><slot></slot></el-col>
-    </el-row> -->
+    </el-row>
   </div>
 </template>
 <script>

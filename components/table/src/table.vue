@@ -79,4 +79,7 @@ export default {
   height: 100%;
   overflow-y:auto ;
 }
+.table >>> .el-table__body-wrapper{
+  height: calc(100% - 36px);
+}
 </style>
