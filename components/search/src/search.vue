@@ -56,7 +56,7 @@ export default {
     searchCascader: () => import("./SearchCascader.vue"),
     searchTime: () => import("./SearchTimeSelect.vue"),
     WebButtonGroup: () => import("../../button-group/src/button-group.vue"),
-    WebButton: () => import("../../button1/src/button.vue"),
+    WebButton: () => import("../../button/src/button.vue"),
   },
   props: {
     value: {
