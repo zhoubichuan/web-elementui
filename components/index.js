@@ -17,7 +17,7 @@ import DropdownMenu from './dropdown-menu/index.js'
 // import CheckboxButton from './checkbox-button/index.js'
 // import CheckboxGroup from './checkbox-group/index.js'
 // import Switch from './switch/index.js'
-// import Select from './select/index.js'
+import Select from './select/index.js'
 // import Option from './option/index.js'
 // import OptionGroup from './option-group/index.js'
 import Button from './button/index.js'
@@ -27,7 +27,6 @@ import Dialog from './dialog/index.js'
 import Slider from './slider/index.js'
 import Modal from './modal/index.js'
 import CommonForm from './common-form/index.js'
-import UploadImage from './upload-image/index.js'
 import FormItem from './form-item/index.js'
 import Table from './table/index.js'
 import TableColumn from './table-column/index.js'
@@ -52,7 +51,7 @@ import TableColumn from './table-column/index.js'
 // import Icon from './icon/index.js'
 // import Row from './row/index.js'
 // import Col from './col/index.js'
-// import Upload from './upload/index.js'
+import Upload from './upload/index.js'
 // import Progress from './progress/index.js'
 // import Spinner from './spinner/index.js'
 // import Message from './message/index.js'
@@ -115,7 +114,7 @@ const components = [
   // CheckboxButton,
   // CheckboxGroup,
   // Switch,
-  // Select,
+  Select,
   // Option,
   // OptionGroup,
   Button,
@@ -124,7 +123,6 @@ const components = [
   Slider,
   Modal,
   ButtonGroup,
-  UploadImage,
   CommonForm,
   FormItem,
   Table,
@@ -147,7 +145,7 @@ const components = [
   // Icon,
   // Row,
   // Col,
-  // Upload,
+  Upload,
   // Progress,
   // Spinner,
   // Badge,
@@ -239,7 +237,7 @@ export default {
   // CheckboxButton,
   // CheckboxGroup,
   // Switch,
-  // Select,
+  Select,
   // Option,
   // OptionGroup,
   Button,
@@ -248,7 +246,6 @@ export default {
   Dialog,
   Slider,
   Modal,
-  UploadImage,
   CommonForm,
   FormItem,
   Table,
@@ -273,7 +270,7 @@ export default {
   // Icon,
   // Row,
   // Col,
-  // Upload,
+  Upload,
   // Progress,
   // Spinner,
   // Message,

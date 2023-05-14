@@ -25,12 +25,12 @@
     "@vuepress/plugin-nprogress": "^1.8.2",
     "@vuepress/plugin-pwa": "^1.8.2",
     "async-validator": "^1.11.5",
-    "element-ui": "^2.3.7",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-uglify": "^3.0.2",
     "less-loader": "^4.1.0",
+    "less": "^3.0.2",
     "node-sass": "4.14.1",
     "sass-loader": "7.3.1",
     "vue": "^2.5.16",
@@ -39,7 +39,7 @@
     "webpack-cli": "^5.0.2"
   },
   "dependencies": {
-    "less": "^3.0.2",
+    "element-ui": "2.15.9",
     "vue-echarts": "^3.0.7",
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0"

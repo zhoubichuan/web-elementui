@@ -1,14 +1,18 @@
 const path = require("path");
+// const WebPack = require('webpack')
 module.exports = {
   title: "ElementUI学习笔记",
   description: "ElementUI学习笔记",
   base: "/web-elementui/", // 部署站点的基础路径
   port: 3009,
+  // head: [
+  //   ['script', { src: '/js/vendor.dll.js' }],
+  // ],
   configureWebpack: {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "../../src/"),
-        'vue$': 'vue/dist/vue.esm.js',
+        vue$: "vue/dist/vue.esm.js",
       },
     },
   },
@@ -17,6 +21,13 @@ module.exports = {
     @import "../../../components/variables.scss";
     `,
   },
+  // plugins: [
+  //   new WebPack.DllReferencePlugin({
+  //     manifest: require(path.resolve(__dirname, "public/dll/manifest.json")),
+  //     name: '[name]_[hash]',
+  //     context: process.cwd()
+  //   }),
+  // ],
   dest: "web-elementui", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
