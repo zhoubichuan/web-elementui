@@ -36,7 +36,7 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="scss">
 .el-icon-loading {
   position: absolute;
   left: 5px;

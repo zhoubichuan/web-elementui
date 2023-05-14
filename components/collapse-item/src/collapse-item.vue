@@ -8,7 +8,7 @@
   export default {
     name: 'CollapseItem',
     install (Vue) {
-      Vue.component('CollapseItem', this)
+      Vue.component('WebCollapseItem', this)
     }
   }
 </script>
