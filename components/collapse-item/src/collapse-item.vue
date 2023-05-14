@@ -6,7 +6,7 @@
 
 <script type="text/ecmascript-6">
   export default {
-    name: 'CollapseItem',
+    name: 'WebCollapseItem',
     install (Vue) {
       Vue.component('WebCollapseItem', this)
     }

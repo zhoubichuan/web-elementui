@@ -5,7 +5,7 @@
       :total="pageData.total"
       :page-size="pageData.pageSize"
       :page-count="pageCount"
-      :current-page="pageData.curPage"
+      :current-page="pageData.current"
       @size-change="handleSizeChange"
       :page-sizes="pageSizes"
       @current-change="handleCurrentChange"
@@ -23,7 +23,7 @@ export default {
     page: {
       type: Object,
       default: () => ({
-        curPage: 1,
+        current: 1,
         pageSize: 20,
         total: 0
       })
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     handleCurrentChange (val) {
-      this.pageData.curPage = val
+      this.pageData.current = val
       this.$emit('input', this.pageData)
     },
     handleSizeChange (val) {
