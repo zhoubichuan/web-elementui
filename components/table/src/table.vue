@@ -1,11 +1,7 @@
 <template>
-  <div >
-    <el-table
-      class="table"
-      size="mini"
-      v-bind="$attrs"
-      v-on="$listeners">
-        <slot></slot>
+  <div>
+    <el-table class="table" size="mini" v-bind="$attrs" v-on="$listeners">
+      <slot></slot>
     </el-table>
     <el-pagination
       class="pagination"
@@ -16,17 +12,18 @@
       :current-page="pageData.current"
       @size-change="handleSizeChange"
       :page-sizes="pageSizes"
-      @current-change="handleCurrentChange">
+      @current-change="handleCurrentChange"
+    >
     </el-pagination>
   </div>
 </template>
 <script>
-import Pagination from '../../pagination/src/pagination.vue'
+import Pagination from "../../pagination/src/pagination.vue";
 
 export default {
-  name: 'WebTablePage',
+  name: "WebTablePage",
   components: {
-    Pagination
+    Pagination,
   },
   props: {
     value: {
@@ -34,52 +31,53 @@ export default {
       default: () => ({
         current: 1,
         pageSize: 20,
-        total: 0
-      })
+        total: 0,
+      }),
     },
     pageSizes: {
       type: Array,
-      default: () => [10, 20, 50, 100, 200]
-    }
+      default: () => [10, 20, 50, 100, 200],
+    },
   },
-  data () {
+  data() {
     return {
       pageCount: 1,
-      pageData: this.value
-    }
+      pageData: this.value,
+    };
   },
   watch: {
-    value (val) {
-      this.pageData = val
-    }
+    value(val) {
+      this.pageData = val;
+    },
   },
   methods: {
-    updatePage (val) {
-      this.$emit('input', val)
+    updatePage(val) {
+      this.$emit("input", val);
     },
-    handleCurrentChange (val) {
-      this.pageData.current = val
-      this.$emit('input', this.pageData)
+    handleCurrentChange(val) {
+      this.pageData.current = val;
+      this.$emit("input", this.pageData);
     },
-    handleSizeChange (val) {
-      this.pageData.pageSize = val
-      this.$emit('input', this.pageData)
+    handleSizeChange(val) {
+      this.pageData.pageSize = val;
+      this.$emit("input", this.pageData);
     },
-    handleSelectionChange () {
-
-    }
-  }
-}
+    handleSelectionChange() {},
+  },
+};
 </script>
-<style scoped>
+<style scoped lang="scss">
 .table {
   overflow-y: auto;
-}
-.table >>> .el-table--scrollable-x .el-table__body-wrapper{
   height: 100%;
-  overflow-y:auto ;
-}
-.table >>> .el-table__body-wrapper{
-  height: calc(100% - 36px);
+  /deep/.el-table--scrollable-x {
+    .el-table__body-wrapper {
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+  /deep/.el-table__body-wrapper {
+    height: calc(100% - 36px);
+  }
 }
 </style>
