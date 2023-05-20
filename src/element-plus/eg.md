@@ -154,23 +154,7 @@ export default {
       this.productId = row._id;
     },
     async queryDataEntityList(condition = {}) {
-      this.loadingFlag = true;
-      let { current, pageSize } = this.page;
-      let { data } = await axios.get(this.$withBase("/data/search.json"));
-      if (data) {
-        let {
-          result,
-          page: { current, total, pageSize },
-        } = data;
-        this.loadingFlag = false;
-        this.page.total = total;
-        this.page.current = current;
-        this.page.pageSize = pageSize;
-        this.tableData = result;
-      } else {
-        this.tableData = [];
-        this.loadingFlag = false;
-      }
+      this.tableData = this.getData('search1');
     },
   },
 };

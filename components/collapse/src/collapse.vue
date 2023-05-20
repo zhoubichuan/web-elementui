@@ -35,11 +35,6 @@
   }
 </script>
 
-<style scoped>
- .collapse >>> .el-collapse-item__header{
-   border-bottom: none;
- }
- .collapse .el-collapse-item__content{
-   border-bottom: none;  
- }
+<style lang="scss">
+@import url("../index.scss");
 </style>

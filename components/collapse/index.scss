@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+
+.collapse >>> .el-collapse-item__header{
+  border-bottom: none;
+}
+.collapse .el-collapse-item__content{
+  border-bottom: none;  
+}
+.el-collapse{
+
+ border: none;
+}
