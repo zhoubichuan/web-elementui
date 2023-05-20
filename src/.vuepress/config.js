@@ -33,7 +33,9 @@ module.exports = {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true, // 代码块显示行号
   },
-  head: [["script", { src: "/js/axios.min.js" }]],
+  head: [
+    ["script", { src: "/js/axios.min.js" }],
+  ],
   plugins: {
     // 'vuepress-plugin-mermaidjs': {},
     // "vuepress-plugin-auto-sidebar": {},
