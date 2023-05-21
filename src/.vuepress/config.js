@@ -5,9 +5,6 @@ module.exports = {
   description: "ElementUI学习笔记",
   base: "/web-elementui/", // 部署站点的基础路径
   port: 3009,
-  // head: [
-  //   ['script', { src: '/js/vendor.dll.js' }],
-  // ],
   configureWebpack: {
     resolve: {
       alias: {
@@ -33,9 +30,6 @@ module.exports = {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true, // 代码块显示行号
   },
-  head: [
-    ["script", { src: "/js/axios.min.js" }],
-  ],
   plugins: {
     // 'vuepress-plugin-mermaidjs': {},
     // "vuepress-plugin-auto-sidebar": {},

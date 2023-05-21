@@ -1,17 +1,14 @@
-import VueECharts from 'vue-echarts' //注册图表
-// import 'static/css/normalize.css'
-// import 'static/css/reset.css'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+// 通过该文件，把需要用的组件进行全局的注册，因为在markdown中的文件不能使用import引入组件，必须要提前注册好全局的组件
+import config from '@/config'
+import ui from '@/ui'
 import WebElementui from '../../components/index.js'
 // import '../../components/index.scss'
 import data from './data.js'
-
 export default ({
     Vue
 }) => {
-    Vue.use(ElementUI)
-    Vue.component('echart', VueECharts)
+    Vue.use(ui)
+    Vue.use(config)
     Vue.use(WebElementui)
     Vue.use(data)
 }
