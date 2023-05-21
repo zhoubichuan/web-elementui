@@ -14,11 +14,14 @@ data.table1 = [
       "show-overflow-tooltip": true,
       width: "55",
     },
-    render: ({
-      data: {
-        attrs: { item, row },
-      },
-    }) => (
+    render: (
+      h,
+      {
+        data: {
+          attrs: { item, row },
+        },
+      }
+    ) => (
       <el-link
         size={"mini"}
         type={"primary"}
@@ -120,11 +123,14 @@ data.table1 = [
   {
     label: "操作",
     attrs: { fixed: "right", "show-overflow-tooltip": true },
-    render: ({
-      data: {
-        attrs: { item, row },
-      },
-    }) => [
+    render: (
+      h,
+      {
+        data: {
+          attrs: { item, row },
+        },
+      }
+    ) => [
       <el-link
         icon={"el-icon-edit"}
         title={"编辑"}
@@ -137,7 +143,7 @@ data.table1 = [
       />,
     ],
   },
-]
+];
 data.search1 = [
   {
     type: "searchInput",
@@ -302,7 +308,7 @@ data.search1 = [
 ];
 
 export default {
-  install:function(Vue){
-    Vue.prototype.getData = (name) => data[name] || []
-  }
-}
+  install: function (Vue) {
+    Vue.prototype.getData = (name) => data[name] || [];
+  },
+};
