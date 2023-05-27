@@ -158,8 +158,8 @@ const components = [
   // Carousel,
   // Scrollbar,
   // CarouselItem,
-  Collapse
-  // CollapseItem,
+  Collapse,
+  CollapseItem,
   // Cascader,
   // ColorPicker,
   // Transfer,
@@ -285,8 +285,8 @@ export default {
   // Carousel,
   // Scrollbar,
   // CarouselItem,
-  Collapse
-  // CollapseItem,
+  Collapse,
+  CollapseItem,
   // Cascader,
   // ColorPicker,
   // Transfer,

@@ -16,11 +16,7 @@
     @selection-change="handleSelectionChange"
     class="table-part"
   >
-    <web-table-column v-for="item in tableRows" :key="item.prop" :item="item">
-      <!-- <template slot-scope="{ row }">
-        {{ row[item.prop] || "-" }}
-      </template> -->
-    </web-table-column>
+    <web-table-column v-for="item in tableRows" :key="item.prop" :item="item" />
   </web-table-page>
 </template>
 <script>
@@ -49,12 +45,12 @@ export default {
       drawer: false,
       tableData: [],
       productId: "",
-      tableRows: []
+      tableRows: [],
     };
   },
   mounted() {
     this.handleSearch();
-    this.tableRows = this.getData('table2');
+    this.tableRows = this.getData("table2");
   },
   methods: {
     showViewModal(row) {
@@ -92,7 +88,7 @@ export default {
       this.productId = row._id;
     },
     async queryDataEntityList(condition = {}) {
-      this.tableData = this.getData('search1');
+      this.tableData = this.getData("search1");
     },
   },
 };

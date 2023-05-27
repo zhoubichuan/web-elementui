@@ -1,6 +1,11 @@
 <template>
   <div>
-    <el-table class="table" size="mini" v-bind="$attrs" v-on="$listeners">
+    <el-table
+      class="table"
+      size="mini"
+      v-bind="{ ...defaultAttrs, ...$attrs }"
+      v-on="$listeners"
+    >
       <slot></slot>
     </el-table>
     <el-pagination
@@ -43,6 +48,12 @@ export default {
     return {
       pageCount: 1,
       pageData: this.value,
+      defaultAttrs: {
+        stripe: true,
+        fit: true,
+        "show-header": true,
+        "highlight-current-row": true,
+      },
     };
   },
   watch: {
@@ -68,7 +79,6 @@ export default {
 </script>
 <style scoped lang="scss">
 .table {
-  overflow-y: auto;
   height: 100%;
   /deep/.el-table--scrollable-x {
     .el-table__body-wrapper {
@@ -78,6 +88,19 @@ export default {
   }
   /deep/.el-table__body-wrapper {
     height: calc(100% - 36px);
+    overflow-y: auto;
   }
+}
+</style>
+<style>
+.el-table_fixed,
+el-table__fixed-right {
+  height: 100% !important;
+}
+.el-table__fixed-body-wrapper {
+  height: 100 !important;
+}
+.el-table__fixed-body-wrapper .el-table__body {
+  padding-bottom: 20px;
 }
 </style>
