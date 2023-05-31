@@ -43,14 +43,13 @@ export default {
       editModalFlag: false,
       removeModalFlag: false,
       drawer: false,
-      tableData: [],
+      tableData: require("@/assets/data/search1.js").default,
       productId: "",
-      tableRows: [],
+      tableRows:  require("@/assets/data/table2.js").default,
     };
   },
   mounted() {
     this.handleSearch();
-    this.tableRows = this.getData("table2");
   },
   methods: {
     showViewModal(row) {
@@ -88,7 +87,6 @@ export default {
       this.productId = row._id;
     },
     async queryDataEntityList(condition = {}) {
-      this.tableData = this.getData("search1");
     },
   },
 };

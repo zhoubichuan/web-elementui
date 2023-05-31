@@ -9,7 +9,7 @@ let clean = require('gulp-clean'); // 打包之前，先清空原来的文件
 let uglify = require('gulp-uglify'); // 获取 uglify 模块（用于压缩 JS）
 let babel = require('gulp-babel'); // 将ES6编译成ES5
 // let imgmin = require('gulp-imagemin'); // 压缩图片
-let distBasePath = '../abstract-vue/node_modules/web-elementui/'; //构建输出的目录
+let distBasePath = 'lib/'; //构建输出的目录
 let comPath = 'components/'
 //删除dist文件
 gulp.task('clean', function () {

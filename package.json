@@ -40,10 +40,8 @@
   },
   "dependencies": {
     "axios": "0.21.1",
-    "echarts": "4.9.0",
     "lodash": "4.17.21",
     "element-ui": "2.15.9",
-    "vue-echarts": "^3.0.7",
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0"
   }

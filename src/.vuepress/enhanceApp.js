@@ -3,12 +3,10 @@ import config from '@/config'
 import ui from '@/ui'
 import WebElementui from '../../components/index.js'
 // import '../../components/index.scss'
-import data from './data.js'
 export default ({
     Vue
 }) => {
     Vue.use(ui)
     Vue.use(config)
     Vue.use(WebElementui)
-    Vue.use(data)
 }
