@@ -11,8 +11,8 @@
     :label="item.label"
     v-bind="item.attrs"
   >
-  <template slot-scope="{ row }">
-    <Render v-if="item.render" :render="item.render" :item="item" :row="row"></Render>
+  <template slot-scope="scope">
+    <Render v-if="item.render" :render="item.render" :item="item" :scope="scope"></Render>
     </template>
   </el-table-column>
   <el-table-column

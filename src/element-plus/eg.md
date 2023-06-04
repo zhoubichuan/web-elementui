@@ -30,6 +30,29 @@ export default {
   components: {},
   data() {
     return {
+      item:{
+    label: "操作",
+    attrs: { fixed: "right", "show-overflow-tooltip": true },
+    render: (
+      h,
+      {
+        data: {
+          attrs: { item, row },
+        },
+      }
+    ) => [
+      <el-link
+        icon={"el-icon-edit"}
+        title={"编辑"}
+        onClick={(row) => this.showEditModal(row)}
+      ></el-link>,
+      <el-link
+        icon={"el-icon-collection"}
+        title={"修订"}
+        onClick={(row) => this.showRemoveModal(row)}
+      ></el-link>,
+    ],
+  },
       sliderRightIndex: 0,
       sliderPage: {},
       conditon: this.searchConditon,
@@ -45,7 +68,7 @@ export default {
       drawer: false,
       tableData: require("@/assets/data/search1.js").default,
       productId: "",
-      tableRows:  require("@/assets/data/table2.js").default,
+      tableRows:  require("@/assets/data/table2.js").default.map(i=>typeof i === 'function'? i.call(this):i),
     };
   },
   mounted() {
@@ -55,8 +78,13 @@ export default {
     showViewModal(row) {
       this.$emit("showViewModal", row);
     },
-    showEditModal(row) {
-      this.$emit("showEditModal", row);
+    showEditModal(scope) {
+      this.tableRows =this.tableRows.map((item,index)=>{
+        if(index === scope.$index){
+          item.isEdit = true 
+        }
+        return item
+      })
     },
     handleInput(val) {
       this.page = val;

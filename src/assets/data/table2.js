@@ -41,27 +41,29 @@ export default [
     label: "选项",
     attrs: { "show-overflow-tooltip": true },
   },
-  {
-    label: "操作",
-    attrs: { fixed: "right", "show-overflow-tooltip": true },
-    render: (
-      h,
-      {
-        data: {
-          attrs: { item, row },
-        },
-      }
-    ) => [
-      <el-link
-        icon={"el-icon-edit"}
-        title={"编辑"}
-        onClick={(row) => this.showEditModal(row)}
-      ></el-link>,
-      <el-link
-        icon={"el-icon-collection"}
-        title={"修订"}
-        onClick={(row) => this.showRemoveModal(row)}
-      ></el-link>,
-    ],
-  },
+  function(){
+    return ({
+      label: "操作",
+      attrs: { fixed: "right", "show-overflow-tooltip": true },
+      render: (
+        h,
+        {
+          data: {
+            attrs: { item, scope },
+          },
+        }
+      ) => [
+        <el-link
+          icon={"el-icon-edit"}
+          title={"编辑"}
+          onClick={() => this.showEditModal(scope)}
+        ></el-link>,
+        <el-link
+          icon={"el-icon-collection"}
+          title={"修订"}
+          onClick={() => this.showRemoveModal(scope)}
+        ></el-link>,
+      ],
+    })
+  }
 ];
