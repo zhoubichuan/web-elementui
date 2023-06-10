@@ -21,9 +21,7 @@
         :item="item"
       />
     </web-table-page>
-    <web-dialog>
-      111111
-    </web-dialog>
+    <web-dialog> 111111 </web-dialog>
   </div>
 </template>
 <script>
@@ -130,3 +128,12 @@ export default {
 ```
 
 :::
+
+<style >
+  .navbar,.page-edit{
+    display:none
+  }
+  .theme-default-content:not(.custom) > *:first-child{
+    margin-top:0;
+  }
+</style>

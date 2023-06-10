@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="web-preview">
     <el-button
       size="mini"
       :loading="loading"
@@ -66,10 +66,13 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" >
+.web-preview {
+  display: inline-block;
+}
 .el-dialog {
   height: 90%;
-  margin: 0!important;
+  margin: 0 !important;
   transform: translate(-50%, -50%);
   width: 90%;
   left: 50%;
@@ -81,9 +84,9 @@ export default {
 }
 .el-dialog__body {
   height: calc(100% - 104px);
-  padding-top:0!important ;
-  iframe{
-    border:'none'
+  padding-top: 0 !important ;
+  iframe {
+    border: none;
   }
 }
 </style>
