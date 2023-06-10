@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-  name: 'WebDialogForm',
+  name: 'WebDialog',
   props: {
     value: {
       tyep: Boolean,

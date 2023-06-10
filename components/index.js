@@ -1,5 +1,6 @@
 import Pagination from './pagination/index.js'
 import Preview from './preview/index.js'
+import Layout from './layout/index.js'
 // import Dialog from './dialog/index.js'
 // import Autocomplete from './autocomplete/index.js'
 import Dropdown from './dropdown/index.js'
@@ -98,6 +99,7 @@ import CollapseItem from './collapse-item/index.js'
 const components = [
   Pagination,
   Preview,
+  Layout,
   // Dialog,
   // Autocomplete,
   Dropdown,
@@ -220,6 +222,7 @@ export default {
   version: '2.15.13',
   install,
   Preview,
+  Layout,
   // Loading,
   Pagination,
   // Dialog,

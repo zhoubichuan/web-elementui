@@ -1,23 +1,30 @@
-**搜索组件**
-
 ::: demo
 
 ```vue
 <template>
-  <web-table-page
-    :value="page"
-    @input="(val) => handleInput(val)"
-    v-loading="loadingFlag"
-    element-loading-text="拼命加载中"
-    element-loading-spinner="el-icon-loading"
-    :data="tableData"
-    stripe
-    style="width: 100%"
-    @selection-change="handleSelectionChange"
-    class="table-part"
-  >
-    <web-table-column v-for="item in tableRows" :key="item.prop" :item="item" />
-  </web-table-page>
+  <div>
+    <web-table-page
+      :value="page"
+      @input="(val) => handleInput(val)"
+      v-loading="loadingFlag"
+      element-loading-text="拼命加载中"
+      element-loading-spinner="el-icon-loading"
+      :data="tableData"
+      stripe
+      style="width: 100%"
+      @selection-change="handleSelectionChange"
+      class="table-part"
+    >
+      <web-table-column
+        v-for="item in tableRows"
+        :key="item.prop"
+        :item="item"
+      />
+    </web-table-page>
+    <web-dialog>
+      111111
+    </web-dialog>
+  </div>
 </template>
 <script>
 export default {
@@ -30,29 +37,29 @@ export default {
   components: {},
   data() {
     return {
-      item:{
-    label: "操作",
-    attrs: { fixed: "right", "show-overflow-tooltip": true },
-    render: (
-      h,
-      {
-        data: {
-          attrs: { item, row },
-        },
-      }
-    ) => [
-      <el-link
-        icon={"el-icon-edit"}
-        title={"编辑"}
-        onClick={(row) => this.showEditModal(row)}
-      ></el-link>,
-      <el-link
-        icon={"el-icon-collection"}
-        title={"修订"}
-        onClick={(row) => this.showRemoveModal(row)}
-      ></el-link>,
-    ],
-  },
+      item: {
+        label: "操作",
+        attrs: { fixed: "right", "show-overflow-tooltip": true },
+        render: (
+          h,
+          {
+            data: {
+              attrs: { item, row },
+            },
+          }
+        ) => [
+          <el-link
+            icon={"el-icon-edit"}
+            title={"编辑"}
+            onClick={(row) => this.showEditModal(row)}
+          ></el-link>,
+          <el-link
+            icon={"el-icon-collection"}
+            title={"修订"}
+            onClick={(row) => this.showRemoveModal(row)}
+          ></el-link>,
+        ],
+      },
       sliderRightIndex: 0,
       sliderPage: {},
       conditon: this.searchConditon,
@@ -68,7 +75,9 @@ export default {
       drawer: false,
       tableData: require("@/assets/data/search1.js").default,
       productId: "",
-      tableRows:  require("@/assets/data/table2.js").default.map(i=>typeof i === 'function'? i.call(this):i),
+      tableRows: require("@/assets/data/table2.js").default.map((i) =>
+        typeof i === "function" ? i.call(this) : i
+      ),
     };
   },
   mounted() {
@@ -79,12 +88,12 @@ export default {
       this.$emit("showViewModal", row);
     },
     showEditModal(scope) {
-      this.tableRows =this.tableRows.map((item,index)=>{
-        if(index === scope.$index){
-          item.isEdit = true 
+      this.tableRows = this.tableRows.map((item, index) => {
+        if (index === scope.$index) {
+          item.isEdit = true;
         }
-        return item
-      })
+        return item;
+      });
     },
     handleInput(val) {
       this.page = val;
@@ -114,8 +123,7 @@ export default {
       this.removeModalFlag = true;
       this.productId = row._id;
     },
-    async queryDataEntityList(condition = {}) {
-    },
+    async queryDataEntityList(condition = {}) {},
   },
 };
 </script>

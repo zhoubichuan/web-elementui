@@ -10,7 +10,6 @@
       <slot></slot>
     </el-button>
     <el-dialog
-      width="90%"
       v-if="dialogFormVisible"
       center
       :title="name || '预览页面'"
@@ -68,9 +67,13 @@ export default {
 };
 </script>
 <style lang="scss">
-.el-dialog{
-  margin-top: 0;
+.el-dialog {
   height: 90%;
+  margin: 0!important;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  left: 50%;
+  top: 50%;
 }
 .el-icon-loading {
   position: absolute;
@@ -78,5 +81,9 @@ export default {
 }
 .el-dialog__body {
   height: calc(100% - 104px);
+  padding-top:0!important ;
+  iframe{
+    border:'none'
+  }
 }
 </style>
