@@ -1,6 +1,5 @@
 <template>
   <el-dialog
-    v-if="dialogFormVisible"
     center
     :title="name || '基本属性'"
     modal-append-to-body
@@ -19,32 +18,38 @@
 </template>
 <script>
 export default {
-  name: 'WebDialog',
+  name: "WebDialog",
   props: {
     value: {
       tyep: Boolean,
-      default: false
+      default: false,
     },
     name: {
-      type: String
-    }
+      type: String,
+    },
   },
-  data () {
+  data() {
     return {
-      dialogFormVisible: false
-    }
+      dialogFormVisible: this.value,
+    };
+  },
+  watch: {
+    value(val) {
+      this.dialogFormVisible = val;
+      this.$emit("input", val);
+    },
   },
   methods: {
-    handleCreate () {
-      this.dialogFormVisible = true
+    handleCreate() {
+      this.dialogFormVisible = true;
     },
-    cancel () {
-      this.dialogFormVisible = false
+    cancel() {
+      this.dialogFormVisible = false;
     },
-    create () {
-      this.$emit('create')
-      this.dialogFormVisible = false
-    }
-  }
-}
+    create() {
+      this.$emit("create");
+      this.dialogFormVisible = false;
+    },
+  },
+};
 </script>

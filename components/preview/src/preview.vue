@@ -19,6 +19,7 @@
       :close-on-press-escape="false"
       :close-on-click-modal="false"
       :visible.sync="dialogFormVisible"
+      custom-class="preview-dialog"
     >
       <iframe :src="url" width="100%" height="100%"></iframe>
     </el-dialog>
@@ -66,27 +67,27 @@ export default {
   },
 };
 </script>
-<style lang="scss" >
+<style lang="scss" lang="scss">
 .web-preview {
   display: inline-block;
 }
-.el-dialog {
+.preview-dialog {
   height: 90%;
   margin: 0 !important;
   transform: translate(-50%, -50%);
   width: 90%;
   left: 50%;
   top: 50%;
-}
-.el-icon-loading {
-  position: absolute;
-  left: 5px;
-}
-.el-dialog__body {
-  height: calc(100% - 104px);
-  padding-top: 0 !important ;
-  iframe {
-    border: none;
+  .el-icon-loading {
+    position: absolute;
+    left: 5px;
+  }
+  .el-dialog__body {
+    height: calc(100% - 104px);
+    padding-top: 0 !important ;
+    iframe {
+      border: none;
+    }
   }
 }
 </style>
