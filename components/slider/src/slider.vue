@@ -158,4 +158,7 @@ export default {
 .slider-right >>> .slider-tabs .slider-tab-pane {
   height: 100%;
 }
+.slider-right >>> .el-drawer{
+  width:100%!important;
+}
 </style>
