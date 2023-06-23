@@ -1,35 +1,54 @@
 const path = require("path");
 const httpRequest = require("../../mock/http.js");
-// const WebPack = require('webpack')
-module.exports ={
+const Webpack = require("webpack");
+const bodyParser = require('body-parser')
+
+module.exports = {
   title: "ElementUI学习笔记",
-  description: "ElementUI学习笔记",
+  description: "风浪没平息 我宣告奔跑的意义",
   base: "/web-elementui/", // 部署站点的基础路径
   port: 3009,
+  head: [["script", { src: "/dll/vendor.dll.js" }]],
   define: {
     env: {
-      NODE_ENV: process.env.NODE_ENV
+      NODE_ENV: process.env.NODE_ENV,
     },
   },
-  beforeDevServer(app, server) {
+  beforeDevServer(app, server, compiler) {
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({ extended: false }))
+  
     httpRequest(app);
   },
   alias: {
-    '@': path.resolve(__dirname, "../../src/"),
+    "@": path.resolve(__dirname, "../../src/"),
     vue$: "vue/dist/vue.esm.js",
   },
   scss: {
     data: `
-    @import "../../../components/variables.scss";
+    @import "~@/assets/style/var.scss";
+    @import "~@/assets/style/variables.scss";
+    @import "~@/assets/style/reset.scss";
+    @import "~@/assets/style/mixins.scss";
     `,
   },
-  // plugins: [
-  //   new WebPack.DllReferencePlugin({
-  //     manifest: require(path.resolve(__dirname, "public/dll/manifest.json")),
-  //     name: '[name]_[hash]',
-  //     context: process.cwd()
-  //   }),
-  // ],
+  plugins: [
+    // 设置环境变量
+    new Webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: "production",
+        BASE_API: "/",
+      },
+    }),
+    new Webpack.DllReferencePlugin({
+      manifest: require(path.resolve(
+        __dirname,
+        "public/dll/vendor-manifest.json"
+      )),
+      name: "[name]_[hash]",
+      context: process.cwd(),
+    }),
+  ],
   dest: "web-elementui", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
@@ -82,23 +101,4 @@ module.exports ={
     sidebar: require("./sidebar.js"),
     searchMaxSuggestoins: 10,
   },
-  // clientDynamicModules() {
-  //   return {
-  //     name: 'constants.js',
-  //     content: `export const SOURCE_DIR = '${context.sourceDir}'`
-  //   }
-  // },
-  extendPageData ($page) {
-    const {
-      _filePath,           // 源文件的绝对路径
-      _computed,           // 在构建期访问全局的计算属性，如：_computed.$localePath.
-      _content,            // 源文件的原始内容字符串
-      _strippedContent,    // 源文件剔除掉 frontmatter 的内容字符串
-      key,                 // 页面唯一的 hash key
-      frontmatter,         // 页面的 frontmatter 对象
-      regularPath,         // 当前页面遵循文件层次结构的默认链接
-      path,                // 当前页面的实际链接（在 permalink 不存在时，使用 regularPath ）
-    } = $page
-    $page.$log= console.log
-  }
 };
