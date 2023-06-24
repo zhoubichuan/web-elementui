@@ -40,15 +40,12 @@ export default {
     },
   },
   methods: {
-    handleCreate() {
-      this.dialogFormVisible = true;
-    },
     cancel() {
-      this.dialogFormVisible = false;
+      this.$emit("input", false);
     },
     create() {
       this.$emit("create");
-      this.dialogFormVisible = false;
+      this.$emit("input", false);
     },
   },
 };

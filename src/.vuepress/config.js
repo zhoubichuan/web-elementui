@@ -1,5 +1,5 @@
 const path = require("path");
-const httpRequest = require("../../mock/http.js");
+const httpRequest = require("./public/mock/http.js");
 const Webpack = require("webpack");
 const bodyParser = require('body-parser')
 
@@ -14,7 +14,7 @@ module.exports = {
       NODE_ENV: process.env.NODE_ENV,
     },
   },
-  beforeDevServer(app, server, compiler) {
+  beforeDevServer(app) {
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: false }))
   

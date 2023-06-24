@@ -80,19 +80,17 @@ export default {
 <style scoped lang="scss">
 .table {
   height: 100%;
-  /deep/.el-table--scrollable-x {
+  ::v-deep.el-table--scrollable-x {
     .el-table__body-wrapper {
       height: 100%;
       overflow-y: auto;
     }
   }
-  /deep/.el-table__body-wrapper {
+  ::v-deep.el-table__body-wrapper {
     height: calc(100% - 36px);
     overflow-y: auto;
   }
 }
-</style>
-<style>
 .el-table_fixed,
 el-table__fixed-right {
   height: 100% !important;

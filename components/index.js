@@ -10,7 +10,7 @@ import DropdownMenu from './dropdown-menu/index.js'
 // import Submenu from './submenu/index.js'
 // import MenuItem from './menu-item/index.js'
 // import MenuItemGroup from './menu-item-group/index.js'
-// import Input from './input/index.js'
+import Input from './input/index.js'
 // import InputNumber from './input-number/index.js'
 // import Radio from './radio/index.js'
 // import RadioGroup from './radio-group/index.js'
@@ -109,7 +109,7 @@ const components = [
   // Submenu,
   // MenuItem,
   // MenuItemGroup,
-  // Input,
+  Input,
   // InputNumber,
   // Radio,
   // RadioGroup,
@@ -234,7 +234,7 @@ export default {
   // Submenu,
   // MenuItem,
   // MenuItemGroup,
-  // Input,
+  Input,
   // InputNumber,
   // Radio,
   // RadioGroup,

@@ -1,4 +1,4 @@
-export * from './getJsonData'
+export * from './select'
 export * from './login'
 export * from './relationEntity'
 export * from './dataEntity'

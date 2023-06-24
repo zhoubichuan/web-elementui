@@ -1,17 +1,27 @@
 module.exports = function http(app) {
   app.get("/api/query", (req, res) => {
     if (res) {
-      res.json({
-        statusCode: 200,
-        success: true,
-        result: {
-          page: {
-            total: require("./table.json").length,
-            current: 1,
-            pageSize: 20,
-          },
-          data: require("./table.json"),
-        },
+      let params = req.body;
+      let data = require("./table.json");
+      data.data = params.id;
+      let fs = require("fs");
+      fs.writeFile("./table.json", JSON.stringify(data), (err) => {
+        if (err) {
+          res.json({
+            code: 400,
+            data: {},
+          });
+        } else {
+          res.json({
+            code: 200,
+            page: {
+              total: require("./table.json").length,
+              current: 1,
+              pageSize: 20,
+            },
+            data: require("./table.json"),
+          });
+        }
       });
     }
   });
@@ -72,6 +82,32 @@ module.exports = function http(app) {
           });
         }
       });
+    }
+  });
+  app.post("/mock/select", (req, res) => {
+    if (res) {
+      let params = req.body;
+      let data = require("./select1.json");
+      data.result.data = params;
+      let fs = require("fs");
+      fs.writeFile(
+        __dirname + "/select1.json",
+        JSON.stringify(data),
+        { flag: "w" },
+        (err) => {
+          if (err) {
+            res.json({
+              code: 400,
+              data: {},
+            });
+          } else {
+            res.json({
+              code: 200,
+              data,
+            });
+          }
+        }
+      );
     }
   });
 };
