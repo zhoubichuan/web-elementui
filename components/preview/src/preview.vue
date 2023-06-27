@@ -10,7 +10,6 @@
       <slot></slot>
     </el-button>
     <el-dialog
-      v-if="dialogFormVisible"
       center
       :title="name || '预览页面'"
       modal-append-to-body
@@ -20,6 +19,7 @@
       :close-on-click-modal="false"
       :visible.sync="dialogFormVisible"
       custom-class="preview-dialog"
+      :before-close="handleClose"
     >
       <iframe :src="url" width="100%" height="100%"></iframe>
     </el-dialog>
@@ -51,6 +51,10 @@ export default {
     },
   },
   methods: {
+    handleClose(done){
+      this.$emit('close')
+      done()
+    },
     handleClick() {
       this.loading = true;
       let timer = setTimeout(() => {
@@ -67,7 +71,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" lang="scss">
+<style  lang="scss">
 .web-preview {
   display: inline-block;
 }
