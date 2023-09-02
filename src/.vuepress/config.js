@@ -30,6 +30,7 @@ module.exports = {
     plugins: [require("autoprefixer")],
   },
   stylus: { preferPathResolver: "webpack" },
+  less: {},
   scss: {
     data: `
     @import "~@/assets/style/var.scss";
@@ -39,13 +40,17 @@ module.exports = {
     `,
   },
   sass: { indentedSyntax: true },
-  less: {},
+  dest: "web-elementui", // 指定 vuepress 的输出目录
+  markdown: {
+    toc: { includeLevel: [2, 3] },
+    lineNumbers: true, // 代码块显示行号
+  },
   plugins: [
     // 设置环境变量
     new Webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: "production",
-        BASE_API: "/",
+        NODE_ENV: "'production'",
+        BASE_API: "'/'",
       },
     }),
     new Webpack.DllReferencePlugin({
@@ -56,13 +61,6 @@ module.exports = {
       name: "[name]_[hash]",
       context: process.cwd(),
     }),
-  ],
-  dest: "web-elementui", // 指定 vuepress 的输出目录
-  markdown: {
-    toc: { includeLevel: [2, 3] },
-    lineNumbers: true, // 代码块显示行号
-  },
-  plugins: [
     [require("./demo-preview")],
     [
       "vuepress-plugin-anchor-toc",
@@ -70,20 +68,6 @@ module.exports = {
         showDepth: 1,
         customClass: "your-customClass",
         ignore: ["/", "/api/"],
-      },
-    ],
-    [
-      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
-      {
-        theme: ["blackCat"],
-        clean: true,
-        info: "https://github.com/zhoubichuan",
-        messages: {
-          welcome: "",
-          home: "心里的花，我想要带你回家",
-          theme: "好吧，希望你能喜欢我的其他小伙伴。",
-          close: "再见哦",
-        },
       },
     ],
     // 只要把这个放进 config的plugins中就可以了

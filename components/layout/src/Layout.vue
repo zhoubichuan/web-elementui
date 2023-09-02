@@ -13,7 +13,23 @@
     </div>
   </div>
 </template>
-<style>
+<script>
+export default {
+  name: "WebLayout",
+  data() {
+    return {
+      loading: false,
+    };
+  },
+  props: {
+    duration: {
+      type: Number,
+      default: 1000,
+    },
+  },
+};
+</script>
+<style lang="scss">
 .container1 {
   padding: 0 200px 0 300px;
 }
