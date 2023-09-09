@@ -3,7 +3,7 @@ lang: zh-CN
 home: true
 heroImage: ./home.png
 actionText: 先睹为快 →
-actionLink: /element/base/1.index
+actionLink: /elementui/base/1.index
 pageClass: page_index
 footer: ElementUI学习笔记
 meta:
