@@ -11,8 +11,8 @@
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
   >
-    <div @click="pageIndex++" class="reflesh">刷新</div>
-    <div @click="handleClick" class="screen">全屏/自适应</div>
+    <!-- <div @click="pageIndex++" class="reflesh">刷新</div>
+    <div @click="handleClick" class="screen">全屏/自适应</div> -->
     <div v-if="!show" class="content"></div>
     <div v-else :class="{ 'demo-content': true }">
       <slot name="demo"></slot>
