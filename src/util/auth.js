@@ -1,1 +1,1 @@
-export const getToken = () => localStorage.getItem('token')
+export const getToken = () => window?.localStorage?.getItem('token')

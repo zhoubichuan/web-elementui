@@ -7,7 +7,7 @@ export default {
     Vue.use(VueI18n);
 
     const i18n = new VueI18n({
-      locale: localStorage.getItem("lang") || "cn_ZH", // 语言标识
+      locale: window?.localStorage?.getItem("lang") || "cn_ZH", // 语言标识
       messages: {
         cn_ZH, // 中文语言包
         en_US, // 英文语言包
