@@ -76,64 +76,56 @@ export default {
       tableRows: require("@/assets/data/table2.js").default.map((i) =>
         typeof i === "function" ? i.call(this) : i
       ),
-    };
+    }
   },
   mounted() {
-    this.handleSearch();
+    this.handleSearch()
   },
   methods: {
     showViewModal(row) {
-      this.$emit("showViewModal", row);
+      this.$emit("showViewModal", row)
     },
     showEditModal(scope) {
       this.tableRows = this.tableRows.map((item, index) => {
         if (index === scope.$index) {
-          item.isEdit = true;
+          item.isEdit = true
         }
-        return item;
-      });
+        return item
+      })
     },
     handleInput(val) {
-      this.page = val;
-      this.$emit("pageChange", this.page);
+      this.page = val
+      this.$emit("pageChange", this.page)
     },
     handleSearch(condition) {
-      this.queryDataEntityList(condition);
+      this.queryDataEntityList(condition)
     },
     handleChange(val) {
-      console.log(val);
+      console.log(val)
     },
     handleClick(tab, event) {
-      console.log(tab, event);
+      console.log(tab, event)
     },
     clickpageNum(index) {
-      console.log("pageCount  " + index);
+      console.log("pageCount  " + index)
     },
     handleSelectionChange(val) {
-      this.$emit("input", val);
+      this.$emit("input", val)
     },
     modalChange() {
-      this.addModalFlag = false;
-      this.removeModalFlag = false;
-      this.editModalFlag = false;
+      this.addModalFlag = false
+      this.removeModalFlag = false
+      this.editModalFlag = false
     },
     showRemoveModal(index, row) {
-      this.removeModalFlag = true;
-      this.productId = row._id;
+      this.removeModalFlag = true
+      this.productId = row._id
     },
     async queryDataEntityList(condition = {}) {},
   },
-};
+}
 </script>
 ```
 
 :::
 
-<style >
-  .navbar,.page-edit{
-    display:none
-  }
-  .theme-default-content:not(.custom) > *:first-child{
-    margin-top:0;
-  }
-</style>
