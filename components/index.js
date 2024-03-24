@@ -70,14 +70,14 @@ import CollapseItem from './collapse-item/index.js'
 // import Cascader from './cascader/index.js'
 // import ColorPicker from './color-picker/index.js'
 // import Transfer from './transfer/index.js'
-// import Container from './container/index.js'
+import Container from './container/index.js'
 // import Header from './header/index.js'
 // import Aside from './aside/index.js'
 // import Main from './main/index.js'
 // import Footer from './footer/index.js'
 // import Timeline from './timeline/index.js'
 // import TimelineItem from './timeline-item/index.js'
-// import Link from './link/index.js'
+import Link from './link/index.js'
 // import Divider from './divider/index.js'
 // import Image from './image/index.js'
 // import Calendar from './calendar/index.js'
@@ -165,14 +165,14 @@ const components = [
   // Cascader,
   // ColorPicker,
   // Transfer,
-  // Container,
+  Container,
   // Header,
   // Aside,
   // Main,
   // Footer,
   // Timeline,
   // TimelineItem,
-  // Link,
+  Link,
   // Divider,
   // Image,
   // Calendar,
@@ -213,10 +213,6 @@ const install = function (Vue, opts = {}) {
   // Vue.prototype.$message = Message
 }
 
-/* istanbul ignore if */
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
-}
 
 export default {
   version: '2.15.13',
@@ -293,14 +289,14 @@ export default {
   // Cascader,
   // ColorPicker,
   // Transfer,
-  // Container,
+  Container,
   // Header,
   // Aside,
   // Main,
   // Footer,
   // Timeline,
   // TimelineItem,
-  // Link,
+  Link,
   // Divider,
   // Image,
   // Calendar,

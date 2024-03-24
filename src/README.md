@@ -16,12 +16,12 @@ meta:
     <div id="large-header" class="large-header"></div>
     <div class="features">
       <div class="feature">
-        <h2>ElementUI源码解析</h2> 
+        <h2>源码解析</h2> 
         <p>掌握ElementUI整体结构，深入理解Basic部分、Form部分、Data部分、Notice部分、Navigation部分、Others部分源码实现过程</p>
       </div>
       <div class="feature">
-        <h2>Element-Plus源码解析</h2> 
-        <p>掌握Element-Plus整体结构，深入理解Basic部分、Form部分、Data部分、Notice部分、Navigation部分、Others部分源码实现过程</p>
+        <h2>二次封装</h2> 
+        <p>掌握ElementUI组件的二次封装</p>
       </div>
     </div>
   </div>

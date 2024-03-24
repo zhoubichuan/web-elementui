@@ -79,7 +79,7 @@ const sidebar = {
         '13.infinitescroll',
         '14.drawer'
     ],
-    '/element-plus/base/': [
+    '/element-packag/base/': [
         '1.index',
         '1.layout',
         '2.container',
@@ -89,7 +89,7 @@ const sidebar = {
         '6.scrollbar',
         '7.config-provider'
     ],
-    '/element-plus/form/': [
+    '/element-packag/form/': [
         '1.index',
         '7.cascader',
         '1.radio',
@@ -110,7 +110,7 @@ const sidebar = {
         '17.transfer',
         '18.form'
     ],
-    '/element-plus/data/': [
+    '/element-packag/data/': [
         '1.index',
         '1.table',
         '2.tag',
@@ -124,7 +124,7 @@ const sidebar = {
         '10.descriptions',
         '11.result',
     ],
-    '/element-plus/notice/': [
+    '/element-packag/notice/': [
         '1.index',
         '1.alert',
         '2.loading',
@@ -132,7 +132,7 @@ const sidebar = {
         '4.messagebox',
         '5.notification'
     ],
-    '/element-plus/navigation/': [
+    '/element-packag/navigation/': [
         '1.index',
         '1.affix',
         '2.navmenu',
@@ -142,7 +142,7 @@ const sidebar = {
         '6.dropdown',
         '7.steps',
     ],
-    '/element-plus/others/': [
+    '/element-packag/others/': [
         '1.index',
         '1.dialog',
         '2.tooltip',
