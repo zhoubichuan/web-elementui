@@ -44,8 +44,8 @@ import TableColumn from './table-column/index.js'
 // import FormItem from './form-item/index.js'
 // import Tabs from './tabs/index.js'
 // import TabPane from './tab-pane/index.js'
-// import Tag from './tag/index.js'
-// import Tree from './tree/index.js'
+import Tag from './tag/index.js'
+import Tree from './tree/index.js'
 // import Alert from './alert/index.js'
 // import Notification from './notification/index.js'
 // import Slider from './slider/index.js'
@@ -54,7 +54,7 @@ import TableColumn from './table-column/index.js'
 // import Row from './row/index.js'
 // import Col from './col/index.js'
 import Upload from './upload/index.js'
-// import Progress from './progress/index.js'
+import Progress from './progress/index.js'
 // import Spinner from './spinner/index.js'
 // import Message from './message/index.js'
 // import Badge from './badge/index.js'
@@ -142,15 +142,15 @@ const components = [
   // FormItem,
   // Tabs,
   // TabPane,
-  // Tag,
-  // Tree,
+  Tag,
+  Tree,
   // Alert,
   // Slider,
   // Icon,
   // Row,
   // Col,
   Upload,
-  // Progress,
+  Progress,
   // Spinner,
   // Badge,
   // Card,
@@ -264,8 +264,8 @@ export default {
   // FormItem,
   // Tabs,
   // TabPane,
-  // Tag,
-  // Tree,
+  Tag,
+  Tree,
   // Alert,
   // Notification,
   // Slider,
@@ -273,7 +273,7 @@ export default {
   // Row,
   // Col,
   Upload,
-  // Progress,
+  Progress,
   // Spinner,
   // Message,
   // Badge,
