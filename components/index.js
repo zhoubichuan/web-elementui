@@ -58,7 +58,7 @@ import Progress from './progress/index.js'
 // import Spinner from './spinner/index.js'
 // import Message from './message/index.js'
 // import Badge from './badge/index.js'
-// import Card from './card/index.js'
+import Card from './card/index.js'
 // import Rate from './rate/index.js'
 // import Steps from './steps/index.js'
 // import Step from './step/index.js'
@@ -153,7 +153,7 @@ const components = [
   Progress,
   // Spinner,
   // Badge,
-  // Card,
+  Card,
   // Rate,
   // Steps,
   // Step,
@@ -277,7 +277,7 @@ export default {
   // Spinner,
   // Message,
   // Badge,
-  // Card,
+  Card,
   // Rate,
   // Steps,
   // Step,
