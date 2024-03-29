@@ -1,23 +1,26 @@
 <template>
-  <el-select  
+  <el-select
+    size="mini"
     :value="selectValue"
     @input="update"
     clearable
     filterable
     :multiple="multiple"
-    :placeholder="placeholder">
+    :placeholder="placeholder"
+  >
     <el-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
-      :value="item.value">
+      :value="item.value"
+    >
     </el-option>
   </el-select>
 </template>
 
 <script>
 export default {
-  name: 'WebSelect',
+  name: "WebSelect",
   // model: {
   //   props: 'value',
   //   event: 'updateValue'
@@ -25,46 +28,46 @@ export default {
   props: {
     value: {
       type: [Array, String],
-      require: true
+      require: true,
     },
     placeholder: {
       type: String,
-      default: '请输入'
+      default: "请输入",
     },
     options: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     multiple: {
       type: Boolean,
-      default: false
+      default: false,
     },
     defaultValue: {
       type: [String, Array],
-      default: ''
-    }
+      default: "",
+    },
   },
-  data () {
+  data() {
     return {
-      selectValue: this.value
-    }
+      selectValue: this.value,
+    };
   },
   watch: {
-    value (val) {
-      this.selectValue = val
-    }
+    value(val) {
+      this.selectValue = val;
+    },
   },
-  created () {
+  created() {
     if (this.defaultValue) {
-      this.selectValue = this.defaultValue
-      this.$emit('input', this.selectValue)
+      this.selectValue = this.defaultValue;
+      this.$emit("input", this.selectValue);
     }
   },
   methods: {
-    update (val) {
-      this.selectValue = val
-      this.$emit('input', this.selectValue)
-    }
-  }
-}
+    update(val) {
+      this.selectValue = val;
+      this.$emit("input", this.selectValue);
+    },
+  },
+};
 </script>

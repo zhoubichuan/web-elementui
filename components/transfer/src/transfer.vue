@@ -1,5 +1,5 @@
 <template>
-  <el-slider
+  <el-transfer
     size="mini"
     :loading="loading"
     v-bind="$attrs"
@@ -7,11 +7,11 @@
     @click="handleClick"
   >
     <slot></slot>
-  </el-slider>
+  </el-transfer>
 </template>
 <script>
 export default {
-  name: "WebSlider",
+  name: "WebTransfer",
   data() {
     return {
       loading: false,

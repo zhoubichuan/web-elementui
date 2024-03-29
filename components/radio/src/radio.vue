@@ -1,5 +1,5 @@
 <template>
-  <el-slider
+  <el-radio
     size="mini"
     :loading="loading"
     v-bind="$attrs"
@@ -7,11 +7,11 @@
     @click="handleClick"
   >
     <slot></slot>
-  </el-slider>
+  </el-radio>
 </template>
 <script>
 export default {
-  name: "WebSlider",
+  name: "WebRadio",
   data() {
     return {
       loading: false,

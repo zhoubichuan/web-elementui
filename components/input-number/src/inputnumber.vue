@@ -1,5 +1,5 @@
 <template>
-  <el-slider
+  <el-input-number
     size="mini"
     :loading="loading"
     v-bind="$attrs"
@@ -7,11 +7,11 @@
     @click="handleClick"
   >
     <slot></slot>
-  </el-slider>
+  </el-input-number>
 </template>
 <script>
 export default {
-  name: "WebSlider",
+  name: "WebInputNumber",
   data() {
     return {
       loading: false,

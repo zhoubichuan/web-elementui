@@ -1,5 +1,5 @@
 <template>
-  <el-slider
+  <el-time-select
     size="mini"
     :loading="loading"
     v-bind="$attrs"
@@ -7,11 +7,11 @@
     @click="handleClick"
   >
     <slot></slot>
-  </el-slider>
+  </el-time-select>
 </template>
 <script>
 export default {
-  name: "WebSlider",
+  name: "WebTimeSelect",
   data() {
     return {
       loading: false,
