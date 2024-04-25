@@ -1,13 +1,7 @@
 <template>
   <el-dialog
-    center
-    :title="name || '基本属性'"
-    modal-append-to-body
-    :append-to-body="true"
-    :destroy-on-close="true"
-    :close-on-press-escape="false"
-    :close-on-click-modal="false"
-    :visible.sync="dialogFormVisible"
+    v-bind="attrs"
+    v-on="$listeners"
   >
     <slot></slot>
     <div slot="footer" class="dialog-footer">
@@ -18,35 +12,27 @@
 </template>
 <script>
 export default {
-  name: "WebDialog",
-  props: {
-    value: {
-      tyep: Boolean,
-      default: false,
-    },
-    name: {
-      type: String,
-    },
-  },
-  data() {
-    return {
-      dialogFormVisible: this.value,
-    };
-  },
-  watch: {
-    value(val) {
-      this.dialogFormVisible = val;
-      this.$emit("input", val);
-    },
+  name: 'WebDialog',
+  computed: {
+    attrs () {
+      return {
+        center: true,
+        'modal-append-to-body': true,
+        'append-to-body': true,
+        'destroy-on-close': true,
+        'close-on-press-escape': true,
+        'close-on-click-modal': true,
+        ...this.$attrs
+      }
+    }
   },
   methods: {
-    cancel() {
-      this.$emit("input", false);
+    cancel () {
+      this.$emit('cancel')
     },
-    create() {
-      this.$emit("create");
-      this.$emit("input", false);
-    },
-  },
-};
+    create () {
+      this.$emit('create')
+    }
+  }
+}
 </script>

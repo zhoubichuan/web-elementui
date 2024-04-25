@@ -12,7 +12,7 @@
     v-bind="item.attrs"
   >
   <template slot-scope="scope">
-    <Render v-if="item.render" :render="item.render" :item="item" :scope="scope"></Render>
+    <Render v-if="item.render" :render="item.render" :item="item" :scope="scope" />
     </template>
   </el-table-column>
   <el-table-column
@@ -27,16 +27,16 @@
   </el-table-column>
 </template>
 <script>
-import Render from "../../Render.js";
+import Render from '../../Render.js'
 export default {
-  name: "WebTableColumn",
+  name: 'WebTableColumn',
   components: {
-    Render,
+    Render
   },
   props: {
     item: {
-      type: Object,
-    },
-  },
-};
+      type: Object
+    }
+  }
+}
 </script>
