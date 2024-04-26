@@ -1,5 +1,9 @@
 const nav = [
   {
+    text: '官方文档',
+    link: '/doc/#/zh-CN'
+  },
+  {
     text: '源码解析',
     items: [
       {

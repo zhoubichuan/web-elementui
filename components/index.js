@@ -18,7 +18,7 @@ import Radio from './radio/index.js'
 import Checkbox from './checkbox/index.js'
 // import CheckboxButton from './checkbox-button/index.js'
 // import CheckboxGroup from './checkbox-group/index.js'
-// import Switch from './switch/index.js'
+import Switch from './switch/index.js'
 import Select from './select/index.js'
 // import Option from './option/index.js'
 // import OptionGroup from './option-group/index.js'
@@ -56,7 +56,7 @@ import Upload from './upload/index.js'
 import Progress from './progress/index.js'
 // import Spinner from './spinner/index.js'
 // import Message from './message/index.js'
-// import Badge from './badge/index.js'
+import Badge from './badge/index.js'
 import Card from './card/index.js'
 import Rate from './rate/index.js'
 // import Steps from './steps/index.js'
@@ -90,7 +90,7 @@ import Drawer from './drawer/index.js'
 // import Popconfirm from './popconfirm/index.js'
 // import Skeleton from './skeleton/index.js'
 // import SkeletonItem from './skeleton-item/index.js'
-// import Empty from './empty/index.js'
+import Empty from './empty/index.js'
 // import Descriptions from './descriptions/index.js'
 // import DescriptionsItem from './descriptions-item/index.js'
 // import Result from './result/index.js'
@@ -116,7 +116,7 @@ const components = [
   Checkbox,
   // CheckboxButton,
   // CheckboxGroup,
-  // Switch,
+  Switch,
   Select,
   // Option,
   // OptionGroup,
@@ -150,7 +150,7 @@ const components = [
   Upload,
   Progress,
   // Spinner,
-  // Badge,
+  Badge,
   Card,
   Rate,
   // Steps,
@@ -183,7 +183,7 @@ const components = [
   // Popconfirm,
   // Skeleton,
   // SkeletonItem,
-  // Empty,
+  Empty,
   // Descriptions,
   // DescriptionsItem,
   // Result
@@ -236,7 +236,7 @@ export default {
   Checkbox,
   // CheckboxButton,
   // CheckboxGroup,
-  // Switch,
+  Switch,
   Select,
   // Option,
   // OptionGroup,
@@ -273,7 +273,7 @@ export default {
   Progress,
   // Spinner,
   // Message,
-  // Badge,
+  Badge,
   Card,
   Rate,
   // Steps,
@@ -307,7 +307,7 @@ export default {
   // Popconfirm,
   // Skeleton,
   // SkeletonItem,
-  // Empty,
+  Empty,
   // Descriptions,
   // DescriptionsItem,
   // Result
