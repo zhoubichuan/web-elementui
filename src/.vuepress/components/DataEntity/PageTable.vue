@@ -1,39 +1,25 @@
----
-lang: zh-CN
-sidebarDepth: 2
-meta:
-  - name: description
-    content: 个人总结的vuepress学习技术文档-语法
-  - name: keywords
-    content: vuepress,最新技术文档,vuepress语法,markdown语法
----
-
-# 一.Table
-
-::: demo
-
-```vue
 <template>
   <web-table-page
     :value="page"
     @input="(val) => handleInput(val)"
-    height="400"
     v-loading="loadingFlag"
     element-loading-text="拼命加载中"
     element-loading-spinner="el-icon-loading"
     :data="tableData"
     stripe
+    highlight-current-row
     style="width: 100%"
     @selection-change="handleSelectionChange"
     class="table-part"
   >
-    <web-table-column v-for="item in tableRows" :key="item.prop" :item="item">
-    </web-table-column>
+    <web-table-column v-for="item in tableRows" :key="item.prop" :item="item" />
   </web-table-page>
 </template>
+
 <script>
+import table from "./PageTableConfig.js";
 export default {
-  mixins: [require('@/assets/data/table1.js').default],
+  mixins: [table],
   props: {
     searchConditon: {
       type: Object,
@@ -57,78 +43,82 @@ export default {
       removeModalFlag: false,
       drawer: false,
       tableData: [],
-      productId: '',
-    }
-  },
-  mounted() {
-    this.handleSearch()
+      productId: "",
+    };
   },
   methods: {
-    showViewModal(row) {
-      this.$emit('showViewModal', row)
-    },
-    showEditModal(row) {
-      this.$emit('showEditModal', row)
-    },
     handleInput(val) {
-      this.page = val
-      this.$emit('pageChange', this.page)
+      this.page = val;
+      this.$emit("pageChange", this.page);
     },
     handleSearch(condition) {
-      this.queryDataEntityList(condition)
+      this.queryDataEntityList(condition);
     },
     handleChange(val) {
-      console.log(val)
+      console.log(val);
     },
     handleClick(tab, event) {
-      console.log(tab, event)
+      console.log(tab, event);
     },
     clickpageNum(index) {
-      console.log('pageCount  ' + index)
+      console.log("pageCount  " + index);
     },
     handleSelectionChange(val) {
-      this.$emit('input', val)
+      this.$emit("input", val);
     },
     modalChange() {
-      this.addModalFlag = false
-      this.removeModalFlag = false
-      this.editModalFlag = false
+      this.addModalFlag = false;
+      this.removeModalFlag = false;
+      this.editModalFlag = false;
     },
     showRemoveModal(index, row) {
-      this.removeModalFlag = true
-      this.productId = row._id
+      this.removeModalFlag = true;
+      this.productId = row._id;
+    },
+    async deleteModal(row) {
+      let res = await this.$api.deleteDataEntity(row._id);
+      if (res) {
+        this.$message({
+          message: "数据删除成功",
+          type: "success",
+        });
+        this.handleSearch();
+      }
     },
     async queryDataEntityList(condition = {}) {
-      this.loadingFlag = true
-      let { current, pageSize } = this.page
+      this.loadingFlag = true;
+      let { current, pageSize } = this.page;
+      let { result } = await this.$api.getDataEntityList({
+        current,
+        pageSize,
+        ...condition,
+      });
       try {
-        let { result } = await this.$api.getDataEntityList2({
-          current,
-          pageSize,
-          ...condition,
-        })
         if (result) {
           let {
             data,
             page: { current, total, pageSize },
-          } = result
-          this.page.total = total
-          this.page.current = current
-          this.page.pageSize = pageSize
-          this.tableData = data
+          } = result;
+          this.loadingFlag = false;
+          this.page.total = total;
+          this.page.current = current;
+          this.page.pageSize = pageSize;
+          this.tableData = data;
         } else {
-          this.tableData = []
+          this.tableData = [];
+          this.loadingFlag = false;
         }
-        this.loadingFlag = false
       } catch (e) {
-        this.loadingFlag = false
+        console.log(e);
+      } finally {
+        this.loadingFlag = false;
       }
     },
   },
-}
+};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .content {
   height: 100%;
   display: flex;
@@ -150,6 +140,3 @@ export default {
   overflow-y: auto;
 }
 </style>
-```
-
-:::
