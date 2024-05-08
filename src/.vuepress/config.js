@@ -9,7 +9,21 @@ module.exports = {
   base: "/web-elementui/", // 部署站点的基础路径
   port: 3009,
   head: [
-    ["script", { src: "/dll/vendor.dll.js" }]
+    ['link', { rel: 'icon', href: '/home.png' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ["script", { src: "/dll/vendor.dll.js" }],
+    [
+      "script",
+      {
+        src: "https://webapi.amap.com/maps?v=2.0&key=46c9ed4e2d25a0e0ee7c883fd5b1a0c8",
+      },
+    ],
+    [
+      "script",
+      {
+        src: "https://webapi.amap.com/ui/1.1/main.js?v=1.1.1",
+      },
+    ],
   ],
   define: {
     env: {
@@ -19,7 +33,6 @@ module.exports = {
   beforeDevServer(app, server, compiler) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-
     httpRequest(app);
   },
   alias: {
@@ -70,6 +83,7 @@ module.exports = {
         ignore: ["/", "/api/"],
       },
     ],
+    ['fulltext-search'],
     // 只要把这个放进 config的plugins中就可以了
     [
       "sakura",
