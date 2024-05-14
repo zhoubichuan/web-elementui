@@ -1,6 +1,8 @@
 # web-element
 
-基本 element 二次封装的业务组件库。
+基于 element ui 二次封装的业务组件库。
+
+[查看组件 demo](https://zhoubichuan.com/web-vue2x/senior/3.component/1.index.html)
 
 ## 1.使用方法
 
