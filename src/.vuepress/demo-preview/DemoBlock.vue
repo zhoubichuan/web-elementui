@@ -11,8 +11,8 @@
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
   >
-    <!-- <div @click="pageIndex++" class="reflesh">刷新</div>
-    <div @click="handleClick" class="screen">全屏/自适应</div> -->
+    <div @click="pageIndex++" class="reflesh">刷新</div>
+    <div @click="handleClick" class="screen">全屏/自适应</div>
     <div v-if="!show" class="content"></div>
     <div v-else :class="{ 'demo-content': true }">
       <slot name="demo"></slot>
@@ -185,8 +185,10 @@ export default {
       let codeContent = this.$el.getElementsByClassName("code-content")[0];
       this.codeContentWidth = this.$el.offsetWidth;
       if (this.$el.getElementsByClassName("description").length === 0) {
-        codeContent.style.width = "100%";
-        codeContent.borderRight = "none";
+        if (codeContent) {
+          codeContent.style.width = "100%";
+          codeContent.borderRight = "none";
+        }
       }
     });
   },
@@ -226,7 +228,8 @@ export default {
   .reflesh {
     left: 24px;
     top: 0;
-    position: absolute;
+    // position: absolute;
+    float: left;
     line-height: 20px;
     cursor: pointer;
     display: flex;
@@ -238,14 +241,15 @@ export default {
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-color: red;
+      background-color: lightgray;
       margin-right: 10px;
     }
   }
   .screen {
     right: 24px;
     top: 0;
-    position: absolute;
+    // position: absolute;
+    float: right;
     line-height: 20px;
     cursor: pointer;
     display: flex;
@@ -257,13 +261,12 @@ export default {
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-color: red;
+      background-color: lightgray;
       margin-right: 10px;
     }
   }
   .content {
     height: 100%;
-    width: 100%;
   }
   .demo-content {
     padding: 24px;
