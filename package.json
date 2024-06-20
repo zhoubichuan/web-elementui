@@ -21,7 +21,6 @@
     "build:all": "npm run build:js && npm run build:css"
   },
   "devDependencies": {
-    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "1.0.5",
     "@vuepress/plugin-active-header-links": "1.8.2",
     "@vuepress/plugin-back-to-top": "1.8.2",
     "@vuepress/plugin-blog": "1.9.4",
@@ -45,19 +44,28 @@
     "less-loader": "4.1.0",
     "node-sass": "4.14.1",
     "roolup": "1.0.4",
+    "sass": "^1.69.5",
     "sass-loader": "7.3.1",
+    "voice-core": "^0.4.0",
     "vuepress-plugin-boxx": "0.0.7",
     "vuepress-plugin-dynamic-title": "1.0.0",
     "webpack": "4.29.6",
     "webpack-cli": "3.3.0"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-decoupled-document": "^39.0.1",
+    "@ckeditor/ckeditor5-vue2": "^3.0.1",
     "axios": "0.21.1",
-    "element-ui": "2.15.14",
+    "element-ui": "2.3.7",
     "i18n": "0.15.1",
+    "jspdf": "^2.5.1",
     "lodash": "4.17.21",
     "moment": "2.29.4",
+    "qs": "6.11.2",
+    "vue-pdf": "4.2.0",
+    "vue3-sfc-loader": "^0.8.4",
     "vuepress": "1.9.7",
-    "vuex": "3.1.0"
+    "vuex": "3.1.0",
+    "web-elementui": "1.1.6"
   }
 }
