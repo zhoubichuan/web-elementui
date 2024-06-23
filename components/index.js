@@ -1,7 +1,6 @@
 import Pagination from './pagination/index.js'
 import Preview from './preview/index.js'
 import Layout from './layout/index.js'
-// import Dialog from './dialog/index.js'
 // import Autocomplete from './autocomplete/index.js'
 import Dropdown from './dropdown/index.js'
 import DropdownMenu from './dropdown-menu/index.js'
@@ -87,7 +86,7 @@ import Link from './link/index.js'
 // import Avatar from './avatar/index.js'
 import Drawer from './drawer/index.js'
 // import Statistic from './statistic/index.js'
-// import Popconfirm from './popconfirm/index.js'
+import Popconfirm from './popconfirm/index.js'
 // import Skeleton from './skeleton/index.js'
 // import SkeletonItem from './skeleton-item/index.js'
 import Empty from './empty/index.js'
@@ -99,7 +98,6 @@ const components = [
   Pagination,
   Preview,
   Layout,
-  // Dialog,
   // Autocomplete,
   Dropdown,
   DropdownMenu,
@@ -180,7 +178,7 @@ const components = [
   // Avatar,
   Drawer,
   // Statistic,
-  // Popconfirm,
+  Popconfirm,
   // Skeleton,
   // SkeletonItem,
   Empty,
@@ -219,7 +217,6 @@ export default {
   Layout,
   // Loading,
   Pagination,
-  // Dialog,
   // Autocomplete,
   Dropdown,
   DropdownMenu,
@@ -304,7 +301,7 @@ export default {
   // Avatar,
   Drawer,
   // Statistic,
-  // Popconfirm,
+  Popconfirm,
   // Skeleton,
   // SkeletonItem,
   Empty,
