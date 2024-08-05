@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: "WebRadio",
+    name: "WebRadioGroup",
     data() {
         return {};
     },

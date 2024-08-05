@@ -12,7 +12,7 @@ import DropdownMenu from './dropdown-menu/index.js'
 import Input from './input/index.js'
 import InputNumber from './input-number/index.js'
 import Radio from './radio/index.js'
-// import RadioGroup from './radio-group/index.js'
+import RadioGroup from './radio-group/index.js'
 // import RadioButton from './radio-button/index.js'
 import Checkbox from './checkbox/index.js'
 // import CheckboxButton from './checkbox-button/index.js'
@@ -109,7 +109,7 @@ const components = [
   Input,
   InputNumber,
   Radio,
-  // RadioGroup,
+  RadioGroup,
   // RadioButton,
   Checkbox,
   // CheckboxButton,
@@ -228,7 +228,7 @@ export default {
   Input,
   InputNumber,
   Radio,
-  // RadioGroup,
+  RadioGroup,
   // RadioButton,
   Checkbox,
   // CheckboxButton,
