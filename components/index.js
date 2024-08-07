@@ -33,7 +33,7 @@ import TableColumn from './table-column/index.js'
 import DatePicker from './date-picker/index.js'
 import TimeSelect from './time-select/index.js'
 import TimePicker from './time-picker/index.js'
-// import Popover from './popover/index.js'
+import Popover from './popover/index.js'
 import Tooltip from './tooltip/index.js'
 // import MessageBox from './message-box/index.js'
 // import Breadcrumb from './breadcrumb/index.js'
@@ -131,7 +131,7 @@ const components = [
   DatePicker,
   TimeSelect,
   TimePicker,
-  // Popover,
+  Popover,
   Tooltip,
   // Breadcrumb,
   // BreadcrumbItem,
@@ -250,7 +250,7 @@ export default {
   DatePicker,
   TimeSelect,
   TimePicker,
-  // Popover,
+  Popover,
   Tooltip,
   // MessageBox,
   // Breadcrumb,
