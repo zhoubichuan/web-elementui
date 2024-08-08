@@ -157,7 +157,8 @@ const sidebar = {
         '11.image',
         '12.backtop',
         '13.infinitescroll',
-        '14.drawer'
+        '14.drawer',
+        '15.guide'
     ],
 }
 module.exports = sidebar

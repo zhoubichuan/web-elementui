@@ -93,7 +93,7 @@ import Empty from './empty/index.js'
 // import Descriptions from './descriptions/index.js'
 // import DescriptionsItem from './descriptions-item/index.js'
 // import Result from './result/index.js'
-
+import Guide from './guide/index.js'
 const components = [
   Pagination,
   Preview,
@@ -185,6 +185,7 @@ const components = [
   // Descriptions,
   // DescriptionsItem,
   // Result
+  Guide
 ]
 
 const install = function (Vue, opts = {}) {
@@ -308,4 +309,5 @@ export default {
   // Descriptions,
   // DescriptionsItem,
   // Result
+  Guide
 }
