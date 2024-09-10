@@ -2,7 +2,7 @@
   <div>
     <el-table
       class="table"
-      size="mini"
+      
       v-bind="{ ...defaultAttrs, ...$attrs }"
       v-on="$listeners"
     >

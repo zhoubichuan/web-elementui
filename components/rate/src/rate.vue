@@ -1,6 +1,6 @@
 <template>
   <el-rate
-    size="mini"
+    
     :loading="loading"
     v-bind="$attrs"
     v-on="$listeners"

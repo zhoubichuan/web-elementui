@@ -7,7 +7,7 @@
       </template>
       <transition>
         <el-form
-          size="mini"
+          
           :inline="true"
           :model="value"
           class="demo-form-inline">

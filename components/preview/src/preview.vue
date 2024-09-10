@@ -1,7 +1,7 @@
 <template>
   <div class="web-preview">
     <el-button
-      size="mini"
+      
       :loading="loading"
       v-bind="$attrs"
       v-on="$listeners"

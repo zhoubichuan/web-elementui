@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown-item size="mini" :loading="loading" v-bind="$attrs" v-on="$listeners" @click="handleClick">
+  <el-dropdown-item  :loading="loading" v-bind="$attrs" v-on="$listeners" @click="handleClick">
     <slot></slot>
   </el-dropdown-item>
 </template>

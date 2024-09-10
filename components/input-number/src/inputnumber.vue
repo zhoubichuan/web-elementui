@@ -1,6 +1,6 @@
 <template>
   <el-input-number
-    size="mini"
+    
     :loading="loading"
     v-bind="$attrs"
     v-on="$listeners"

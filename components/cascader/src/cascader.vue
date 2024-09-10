@@ -1,5 +1,5 @@
 <template>
-  <el-cascader size="mini" v-on="$listeners" v-bind="$attrs"></el-cascader>
+  <el-cascader  v-on="$listeners" v-bind="$attrs"></el-cascader>
 </template>
 <script>
 export default {

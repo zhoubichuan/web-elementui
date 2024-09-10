@@ -6,11 +6,6 @@
 <script>
 export default {
     name: "WebRadio",
-    data() {
-        return {};
-    },
-    props: {},
-    methods: {},
 };
 </script>
 <style lang="scss">

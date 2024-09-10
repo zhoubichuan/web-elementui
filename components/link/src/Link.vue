@@ -1,6 +1,6 @@
 <template>
   <el-link
-    size="mini"
+    
     :loading="loading"
     v-bind="$attrs"
     v-on="$listeners"

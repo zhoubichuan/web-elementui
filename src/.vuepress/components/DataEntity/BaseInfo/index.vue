@@ -5,7 +5,7 @@
         ref="form"
         :model="baseInfoForm"
         label-width="80px"
-        size="mini"
+        
         :rules="rules"
       >
         <web-collapse-item title="基本信息" name="base-info">

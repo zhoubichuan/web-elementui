@@ -5,8 +5,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import WebElementui from '../components/index.js'
 // import WebEcharts from 'web-echarts'
 export default {
-  install (Vue) {
-    Vue.use(ElementUI)
+  install(Vue) {
+    Vue.use(ElementUI, { size: 'large' })
     Vue.use(WebElementui)
     // Vue.use(WebEcharts)
   }

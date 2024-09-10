@@ -1,6 +1,6 @@
 <template>
   <el-checkbox
-    size="mini"
+    
     :loading="loading"
     v-bind="$attrs"
     v-on="$listeners"

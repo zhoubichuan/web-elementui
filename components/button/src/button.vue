@@ -1,11 +1,5 @@
 <template>
-  <el-button
-    size="mini"
-    :loading="loading"
-    v-bind="$attrs"
-    v-on="$listeners"
-    @click="handleClick"
-  >
+  <el-button :loading="loading" v-bind="$attrs" v-on="$listeners" @click="handleClick">
     <slot></slot>
   </el-button>
 </template>

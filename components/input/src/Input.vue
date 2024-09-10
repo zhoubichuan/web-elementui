@@ -1,5 +1,5 @@
 <template>
-  <el-input  size="mini" clearable :value="value" @input="update" :placeholder="placeholder"></el-input>
+  <el-input   clearable :value="value" @input="update" :placeholder="placeholder"></el-input>
 </template>
   
 <script>

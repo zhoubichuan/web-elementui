@@ -1,7 +1,7 @@
 <template>
   <div>
     <web-dialog ref="dialogForm">
-      <el-form ref="form" :model="baseInfoForm" label-width="80px" size="mini" :rules="rules">
+      <el-form ref="form" :model="baseInfoForm" label-width="80px"  :rules="rules">
         <web-form-item
           v-for="(formItem, formItemIndex) in baseFormData"
           :formData="formItem"

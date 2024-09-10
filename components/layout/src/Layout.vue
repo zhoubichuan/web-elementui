@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="web-layout">
     <div class="container">
       <div class="main">
         <slot name="main"></slot>
@@ -30,8 +30,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.layout {
-  height: 100%;
+.web-layout {
   .container {
     height: 100%;
     padding: 0 20% 0 20%;

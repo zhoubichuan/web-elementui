@@ -16,14 +16,14 @@
     </p>
     <div class="el-popconfirm__action">
       <el-button 
-        size="mini" 
+         
         :type="cancelButtonType" 
         @click="cancel"
       >
         {{ displayCancelButtonText }}
       </el-button>
       <el-button 
-        size="mini" 
+         
         :type="confirmButtonType" 
         @click="confirm"
       >

@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- <web-button-group class="button-part" justify="start">
-        <el-button size="mini" @click="compire" type="primary">对比</el-button>
+        <el-button  @click="compire" type="primary">对比</el-button>
       </web-button-group> -->
       <web-table-page
         :data="tableData"

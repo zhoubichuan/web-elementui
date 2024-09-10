@@ -10,7 +10,7 @@
         ref="form"
         :model="baseInfoForm"
         label-width="80px"
-        size="mini"
+        
         :rules="rules"
       >
         <web-form-item

@@ -16,11 +16,11 @@
             @keyup.native.enter="handleConfirm"
             @blur="handleConfirm"
             :validate-event="false"
-            size="mini">
+            >
           </el-input>
         </span>
         <el-button
-          size="mini"
+          
           type="text"
           class="el-color-dropdown__link-btn"
           @click="$emit('clear')">
@@ -28,7 +28,7 @@
         </el-button>
         <el-button
           plain
-          size="mini"
+          
           class="el-color-dropdown__btn"
           @click="confirmValue">
           {{ t('el.colorpicker.confirm') }}

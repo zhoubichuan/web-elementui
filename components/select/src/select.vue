@@ -1,6 +1,6 @@
 <template>
   <el-select
-    size="mini"
+    
     :value="selectValue"
     @input="update"
     clearable
