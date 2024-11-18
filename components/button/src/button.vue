@@ -15,7 +15,7 @@ export default {
     props: {
         duration: {
             type: Number,
-            default: 1000,
+            default: 0,
         },
     },
     created() {
@@ -25,8 +25,10 @@ export default {
     },
     methods: {
         handleClick() {
+            if (!this.duration) return;
             this.loading = true;
             let timer = setTimeout(() => {
+                this.$listeners.click();
                 this.loading = false;
             }, this.duration);
             this.$once("hook:beforeDestory", () => {
@@ -50,9 +52,16 @@ export default {
     font-size: 16px;
     color: #ffffff;
     padding: 4px;
+    border: 0.01rem solid rgba(0, 0, 0, 0.3);
     &:hover {
+        background: rgba(0, 0, 0, 0.55);
+        color: #ffffff;
+        border: 0.01rem solid rgba(0, 0, 0, 0.55);
+    }
+    &:focus {
         background: rgba(0, 0, 0, 0.3);
         color: #ffffff;
+        border: 0.01rem solid rgba(0, 0, 0, 0.3);
     }
 }
 </style>
